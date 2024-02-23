@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+}
+
+/* ////// */
+.bar {
+  background-color: transparent;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1em;
+  border-bottom: 0.1px solid gray;
+}
+
+.socialIcons {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1.5em;
+}
+
+.mtmPadding {
+  padding-left: 1.5em;
+}
+
+.drawerItem {
+  align-items: center;
+  padding: 1em;
+  padding-top: 2em;
+}
+
+.text {
+  padding: 1em;
+  font-family: "Newsreader", serif;
+  font-size: x-large;
+  will-change: filter;
+  transition: filter 300ms;
+  cursor: pointer;
+}
+
+.textBold {
+  padding: 1em;
+  font-family: "Newsreader", serif;
+  font-size: x-large;
+  will-change: filter;
+  transition: filter 300ms;
+  font-weight: 600;
+  cursor: default;
+}
+
+.drawer {
+  filter: invert(1);
+  /* siyah gözükmesi için */
+  cursor: pointer;
+  padding-right: 1.5em;
+}
