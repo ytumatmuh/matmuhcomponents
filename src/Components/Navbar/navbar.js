@@ -10,8 +10,10 @@ function NavBar({
 }) {
   return (
     <div className="bar">
-      <div className="drawerItem">
-        <span className="textBold">Yıldız Teknik Üniversitesi</span>
+      <div className="title">
+        <div className="drawerItem">
+          <span className="textBold">Yıldız Teknik Üniversitesi</span>
+        </div>
       </div>
       <div className="socialIcons">
         <div className="drawerItem">

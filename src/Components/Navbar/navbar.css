@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 1em;
-  border-bottom: 0.1px solid #e5e8eb;
+  border-bottom: 1px solid #e5e8eb;
   height: 65px;
 }
 
@@ -20,6 +20,7 @@
 }
 
 .drawerItem {
+  position: relative;
   align-items: center;
   padding: 1em;
   padding-top: 2em;
