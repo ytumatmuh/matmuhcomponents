@@ -1,6 +1,7 @@
 import "./App.css";
-import ImageFrame from "./Components/ImageFrame/imageFrame";
+import HeaderFrame from "./Components/HeaderFrame/headerFrame";
 import NavBar from "./Components/Navbar/navbar";
+import Announcement from "./Services/announcementService";
 
 function App() {
   return (
@@ -8,7 +9,8 @@ function App() {
       <nav>
         <NavBar />
       </nav>
-      <ImageFrame />
+      <HeaderFrame />
+      <Announcement />
     </div>
   );
 }

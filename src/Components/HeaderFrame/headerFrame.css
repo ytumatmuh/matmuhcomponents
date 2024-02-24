@@ -1,0 +1,30 @@
+.header-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: max-content;
+  margin: 0 auto;
+}
+
+.image-frame {
+  display: flex;
+  justify-content: center;
+  margin-top: 19px;
+}
+
+.image-frame img {
+  width: 960px;
+  height: 334px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  margin-right: auto;
+  margin-left: 28px;
+  display: flex;
+  font-size: 40px;
+  font-weight: 700;
+  margin-left: 28px;
+  justify-content: center;
+}
