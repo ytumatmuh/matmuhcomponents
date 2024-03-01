@@ -1,0 +1,6 @@
+.main-cover{
+    display: flex;
+    flex-direction: column;
+    max-width: max-content;
+    justify-content: center;
+}

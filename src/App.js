@@ -1,16 +1,15 @@
 import "./App.css";
-import HeaderFrame from "./Components/HeaderFrame/headerFrame";
 import NavBar from "./Components/Navbar/navbar";
-import Announcement from "./Services/announcementService";
+import HeaderFrame from "./Components/HeaderFrame/headerFrame";
+import PageSelector from "./Components/PageSelector/pageSelector";
+
 
 function App() {
   return (
     <div className="App">
-      <nav>
-        <NavBar />
-      </nav>
+      <NavBar />
       <HeaderFrame />
-      <Announcement />
+      <PageSelector />
     </div>
   );
 }

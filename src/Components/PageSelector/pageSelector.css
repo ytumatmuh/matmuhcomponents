@@ -1,0 +1,32 @@
+.page-cover {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btn-cover {
+  gap: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-bottom: 18px solid #F0F2F5;
+    font-family: "Newsreader";
+    font-weight: 500;
+}
+
+.btn.selected{
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-bottom: 24px solid #F0F2F5;
+    transition: 300ms;
+}
+
