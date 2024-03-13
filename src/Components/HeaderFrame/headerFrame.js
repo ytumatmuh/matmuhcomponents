@@ -8,7 +8,11 @@ const HeaderFrame = () => {
         <img src="/images/ytu_dp2.jpg" alt="Matmuh_image" />
       </div>
 
-      <p className="header-title">Matematik Mühendisliği</p>
+        <div className="header-text">
+        <p className="header-school">Yıldız Teknik Üniversitesi</p>
+        <p className="header-title">Matematik Mühendisliği</p>
+        </div>
+      
     </div>
   );
 };

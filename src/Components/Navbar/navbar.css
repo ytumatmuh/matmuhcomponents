@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-bottom: 1em;
   border-bottom: 1px solid #e5e8eb;
   height: 65px;
 }
@@ -12,18 +11,13 @@
 .socialIcons {
   display: flex;
   flex-direction: row;
-  padding-left: 1.5em;
-}
-
-.mtmPadding {
-  padding-left: 1.5em;
 }
 
 .drawerItem {
   position: relative;
   align-items: center;
   padding: 1em;
-  padding-top: 2em;
+  margin: auto;
 }
 
 .text {
@@ -34,9 +28,9 @@
   will-change: filter;
   transition: 300ms;
   cursor: pointer;
-  background-color: white;
-  border-radius: 15px;
   margin: 0 1px 0 1px;
+  border-bottom: 2px solid transparent;
+  transition: 300ms;
 }
 
 .textBold {
@@ -50,8 +44,20 @@
 }
 
 .text:hover {
-  filter: invert(1);
-  /* siyah gözükmesi için */
   cursor: pointer;
-  padding-right: 1.5em;
+  border-bottom: 2px solid #142658;
+}
+
+.ytu-logo-divider {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  position: relative;
+  margin-left: 1em;
+  margin-right: auto;
+}
+
+.ytu-logo {
+  height: 50px;
+  width: auto;
 }

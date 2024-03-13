@@ -1,15 +1,12 @@
 import "./App.css";
-import NavBar from "./Components/Navbar/navbar";
-import HeaderFrame from "./Components/HeaderFrame/headerFrame";
-import PageSelector from "./Components/PageSelector/pageSelector";
-
+import MainFrame from "./Components/MainFrame/mainFrame";
+import NavBar from "./Components/Navbar/navbar"
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <HeaderFrame />
-      <PageSelector />
+      <MainFrame />
     </div>
   );
 }

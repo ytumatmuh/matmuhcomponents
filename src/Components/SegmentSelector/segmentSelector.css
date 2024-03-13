@@ -2,38 +2,31 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: max-content;
-  margin: 0 auto;
 }
 
 .btn-cover {
   gap: 80px;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .btn{
+    background-color: white;
     border: none;
     cursor: pointer;
     font-size: 18px;
+    border-bottom: 18px solid #F0F2F5;
     font-family: "Newsreader";
     font-weight: 500;
-    background-color: transparent;
-    border-bottom: transparent 2px solid;
-    transition: 300ms;
 }
-
-.btn:hover{
-  cursor: pointer;
-  border-bottom: 2px solid #142658;
-}
-
 
 .btn.selected{
+    background-color: white;
+    border: none;
     cursor: pointer;
+    border-bottom: 24px solid #F0F2F5;
     transition: 300ms;
-    border-bottom: 2px solid #142658;
 }
 

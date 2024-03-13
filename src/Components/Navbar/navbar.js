@@ -3,25 +3,20 @@ import "./navbar.css";
 
 function NavBar({
   onHomeTap,
-  onStudiesTap,
+  onProjectTap,
   onDepTap,
   onResearchTap,
   onAboutTap,
 }) {
   return (
     <div className="bar">
-      <div className="title">
-        <div className="drawerItem">
-          <span className="textBold">Yıldız Teknik Üniversitesi</span>
-        </div>
+      <div className="ytu-logo-divider">
+        <img alt="ytu-logo" src="/images/ytu-logo.webp" className="ytu-logo"/>
       </div>
       <div className="socialIcons">
         <div className="drawerItem">
           <span className="text" onClick={onHomeTap}>
             Home
-          </span>
-          <span className="text" onClick={onStudiesTap}>
-            Studies
           </span>
           <span className="text" onClick={onDepTap}>
             Department
@@ -29,9 +24,13 @@ function NavBar({
           <span className="text" onClick={onResearchTap}>
             Research
           </span>
+          <span className="text" onClick={onProjectTap}>
+            Project
+          </span>
           <span className="text" onClick={onAboutTap}>
             About
           </span>
+          <div className="underline"></div>
         </div>
       </div>
     </div>
