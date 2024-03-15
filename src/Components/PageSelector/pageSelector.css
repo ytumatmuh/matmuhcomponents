@@ -23,6 +23,7 @@
     background-color: transparent;
     border-bottom: transparent 2px solid;
     transition: 300ms;
+    color: #212427;
 }
 
 .btn:hover{
