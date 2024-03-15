@@ -38,5 +38,21 @@
 }
 
 .header-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 2em;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px){
+  
+    .header-frame{
+      width: 100%;
+    }
+
+    .image-frame{
+      display: none;
+    }
+
 }

@@ -8,6 +8,7 @@ function NavBar({
   onResearchTap,
   onAboutTap,
 }) {
+  
   return (
     <div className="bar">
       <div className="ytu-logo-divider">

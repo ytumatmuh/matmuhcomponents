@@ -8,9 +8,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F4F3F2;
+  color: #212427;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+@media only screen and (max-width: 768px){
+  body{
+    overflow-x: hidden;
+    width: 100%;
+  }
 }

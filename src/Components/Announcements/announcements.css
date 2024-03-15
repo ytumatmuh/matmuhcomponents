@@ -9,7 +9,7 @@
 
 .announcement-date {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 10px;
   color: #637587;
   font-family: "Newsreader", serif;
@@ -26,15 +26,15 @@
 .announcement-title {
   font-weight: 700;
   font-family: "Newsreader", serif;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 10px;
-  color: #121417;
+  color: #212427;
 }
 
 .announcement-content {
   margin-bottom: 10px;
   font-family: "Newsreader", serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #637587;
   width: 40%;
@@ -56,6 +56,11 @@
 }
 
 @media screen and (max-width: 900px) {
+.announcement{
+  flex-direction: column;
+  align-items: center;
+}
+
   .announcement-content {
     width: 60%;
   }
@@ -63,5 +68,15 @@
   .announcement-photo {
     width: 200px;
     height: 100px;
+  }
+
+  .announcement-photo{
+    margin-left: 0;
+  }
+
+  .announcement-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }
