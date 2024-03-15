@@ -26,4 +26,12 @@
   .mobile-navbar-app{
     display: block;
   }
+
+  button:focus, button:active{
+    outline: none;
+  }
+
+  a:focus, a:active{
+    outline: none;
+  }
 }
