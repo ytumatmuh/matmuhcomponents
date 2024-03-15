@@ -2,11 +2,12 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: max-content;
+  width: 100%;
   margin: 0 auto;
 }
 
 .btn-cover {
+  width: 100%;
   gap: 10%;
   display: flex;
   flex-direction: row;
