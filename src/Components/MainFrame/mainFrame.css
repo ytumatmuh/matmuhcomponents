@@ -7,3 +7,9 @@
     margin-top: 75px;
 }
 
+@media only screen and (max-width: 768px){
+    .main-cover{
+        margin-top: 0;
+        
+    }
+}

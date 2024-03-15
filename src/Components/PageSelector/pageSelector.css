@@ -39,6 +39,6 @@
 
 @media only screen and (max-width: 768px){
   .btn-cover{
-    margin: 0 30px;
+    margin: 30px 30px;
   }
 }

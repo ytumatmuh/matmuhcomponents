@@ -49,10 +49,20 @@
   
     .header-frame{
       width: 100%;
+      background-image: url("../../../public/images/ytu_dp.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: inset 0 0 0 2000px rgba(63, 63, 63, 0.482);
     }
 
     .image-frame{
       display: none;
+    }
+
+    .header-text{
+      color: #f4f3f2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
 
 }
