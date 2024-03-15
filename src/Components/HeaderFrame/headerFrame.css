@@ -13,8 +13,8 @@
 }
 
 .image-frame img {
-  width: 960px;
-  height: 334px;
+  width: 75%;
+  height: auto;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -54,6 +54,7 @@
       background-repeat: no-repeat;
       background-size: cover;
       box-shadow: inset 0 0 0 2000px rgba(63, 63, 63, 0.482);
+      height: 250px;
     }
 
     .image-frame{
