@@ -1,8 +1,9 @@
 import React from 'react'
+import './studiesPage.css'
 
 const StudiesPage = () => {
   return (
-    <div>Studies Page</div>
+    <div className='studies-main-page'>Studies Page</div>
   )
 }
 
