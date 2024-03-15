@@ -64,6 +64,7 @@
     .header-text{
       color: #f4f3f2;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      gap: 15px;
     }
 
 }
