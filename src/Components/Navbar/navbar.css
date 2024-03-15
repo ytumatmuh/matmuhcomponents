@@ -1,11 +1,18 @@
 .bar {
   background-color: transparent;
-  align-items: stretch;
+  position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 75px;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it's above other elements */
   border-bottom: 1px solid #e5e8eb;
-  height: 65px;
+  background-color: #f4f3f2;
 }
 
 .socialIcons {
