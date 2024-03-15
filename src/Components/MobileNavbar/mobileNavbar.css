@@ -51,6 +51,14 @@
 
 .mobile-navbar-toggle {
   cursor: pointer;
+  outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .mobile-navbar-item a {
@@ -59,6 +67,14 @@
   color: #212427;
   border-bottom: 2px solid transparent;
   transition: 300ms;
+  outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .mobile-navbar-item a:hover {
