@@ -41,17 +41,18 @@
 }
 
 .read-more-button {
-  background-color: #f0f2f5;
+  background-color: transparent;
   color: #121417;
-  border: none;
   padding: 8px 16px;
   border-radius: 10px;
   cursor: pointer;
   transition: 300ms;
+  border: 1px solid #142658;
 }
 
 .read-more-button:hover {
-  filter: invert(1);
+  background-color:  #142658;
+  color: #F4F3F2;
 }
 
 @media screen and (max-width: 900px) {

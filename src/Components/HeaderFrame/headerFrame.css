@@ -20,11 +20,23 @@
 }
 
 .header-title {
-  margin-right: auto;
-  margin-left: 28px;
   display: flex;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 700;
-  margin-left: 28px;
   justify-content: center;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+
+.header-school{
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  letter-spacing: 3px;
+  margin-bottom: 5px;
+}
+
+.header-text{
+  margin: 2em;
 }

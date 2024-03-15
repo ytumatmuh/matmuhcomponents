@@ -3,4 +3,6 @@
     flex-direction: column;
     max-width: max-content;
     justify-content: center;
+    margin: auto;
+    margin-top: 75px;
 }
