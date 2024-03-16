@@ -51,15 +51,15 @@
 }
 
 .read-more-button:hover {
-  background-color:  #142658;
-  color: #F4F3F2;
+  background-color: #142658;
+  color: #f4f3f2;
 }
 
 @media screen and (max-width: 900px) {
-.announcement{
-  flex-direction: column-reverse;
-  align-items: center;
-}
+  .announcement {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 
   .announcement-content {
     width: 60%;
@@ -70,11 +70,11 @@
     height: 120px;
   }
 
-  .announcement-photo{
+  .announcement-photo {
     margin-left: 0;
   }
 
-  .announcement-content{
+  .announcement-content {
     display: flex;
     flex-direction: column;
     justify-content: center;

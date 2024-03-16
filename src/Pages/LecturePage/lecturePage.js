@@ -1,6 +1,6 @@
 import React from "react";
 import Lectures from "../../Services/lectureservice";
-import './lecturePage.css'
+import "./lecturePage.css";
 
 const LecturePage = () => {
   return (

@@ -1,65 +1,64 @@
-.container{
-    width: 100%;
+.container {
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.icon-box {
+  background-color: #dbdbdb;
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lecture {
+  display: flex;
+  border-radius: 8px;
+  padding: 5px;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 0px;
+}
+
+.lecture-title {
+  font-weight: 500;
+  font-family: "Newsreader", serif;
+  font-size: 22px;
+  margin-bottom: 0px;
+  color: #121417;
+  margin-bottom: 20px;
+}
+
+.lecture-content {
+  margin: auto;
+  font-family: "Newsreader", serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #637587;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .lecture-content {
+    width: 60%;
   }
-  
-  .title{
-    display: flex;
-    justify-content: center;
-    font-weight: 500;
+
+  .lecture-photo {
+    width: 200px;
+    height: 100px;
   }
-  
-  .icon-box{
-    background-color: #dbdbdb;
-    width: 48px;
-    height: 48px;
-    border-radius: 5px;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .content{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  
-  .lecture {
-      display: flex;
-      border-radius: 8px;
-      padding: 5px;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 0px;
-    }
-    
-    .lecture-title {
-      font-weight: 500;
-      font-family: "Newsreader", serif;
-      font-size: 22px;
-      margin-bottom: 0px;
-      color: #121417;
-      margin-bottom: 20px;
-    }
-    
-    .lecture-content {
-      margin: auto;
-      font-family: "Newsreader", serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: #637587;
-      width: 100%;
-    }
-    
-    @media screen and (max-width: 900px) {
-      .lecture-content {
-        width: 60%;
-      }
-    
-      .lecture-photo {
-        width: 200px;
-        height: 100px;
-      }
-    }
-    
+}

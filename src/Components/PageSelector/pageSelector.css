@@ -15,32 +15,31 @@
   justify-content: center;
 }
 
-.btn{
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    font-family: "Newsreader";
-    font-weight: 500;
-    background-color: transparent;
-    border-bottom: transparent 2px solid;
-    transition: 300ms;
-    color: #212427;
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Newsreader";
+  font-weight: 500;
+  background-color: transparent;
+  border-bottom: transparent 2px solid;
+  transition: 300ms;
+  color: #212427;
 }
 
-.btn:hover{
+.btn:hover {
   cursor: pointer;
   border-bottom: 2px solid #142658;
 }
 
-
-.btn.selected{
-    cursor: pointer;
-    transition: 300ms;
-    border-bottom: 2px solid #142658;
+.btn.selected {
+  cursor: pointer;
+  transition: 300ms;
+  border-bottom: 2px solid #142658;
 }
 
-@media only screen and (max-width: 768px){
-  .btn-cover{
+@media only screen and (max-width: 768px) {
+  .btn-cover {
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 30px;

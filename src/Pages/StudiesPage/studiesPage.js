@@ -1,10 +1,8 @@
-import React from 'react'
-import './studiesPage.css'
+import React from "react";
+import "./studiesPage.css";
 
 const StudiesPage = () => {
-  return (
-    <div className='studies-main-page'>Studies Page</div>
-  )
-}
+  return <div className="studies-main-page">Studies Page</div>;
+};
 
-export default StudiesPage
+export default StudiesPage;

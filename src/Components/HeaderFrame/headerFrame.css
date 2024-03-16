@@ -28,8 +28,7 @@
   letter-spacing: 1px;
 }
 
-
-.header-school{
+.header-school {
   display: flex;
   justify-content: center;
   margin: 0;
@@ -37,7 +36,7 @@
   margin-bottom: 5px;
 }
 
-.header-text{
+.header-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,28 +44,24 @@
   text-align: center;
 }
 
-@media only screen and (max-width: 768px){
-  
-    .header-frame{
-      width: 100%;
-      background-image: url("../../../public/images/ytu_dp.jpg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      box-shadow: inset 0 0 0 2000px rgba(63, 63, 63, 0.482);
-      height: 250px;
-    }
+@media only screen and (max-width: 768px) {
+  .header-frame {
+    width: 100%;
+    background-image: url("../../../public/images/ytu_dp.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(63, 63, 63, 0.482);
+    height: 250px;
+  }
 
-    .image-frame{
-      display: none;
-    }
+  .image-frame {
+    display: none;
+  }
 
-    .header-text{
-      color: #f4f3f2;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      gap: 15px;
-
-    
-    }
-
+  .header-text {
+    color: #f4f3f2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    gap: 15px;
+  }
 }

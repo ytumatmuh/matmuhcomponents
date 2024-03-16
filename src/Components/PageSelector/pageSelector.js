@@ -30,7 +30,7 @@ const PageSelector = () => {
           onClick={() => handleClick(3)}
           className={selectedPage === 3 ? "btn selected" : "btn"}
         >
-          Lecture
+          Lectures
         </button>
       </div>
       {selectedPage === 1 && <Homepage />}
