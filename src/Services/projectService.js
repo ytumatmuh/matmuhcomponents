@@ -23,7 +23,7 @@ const projects = [
 
 function Project() {
     return (
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <div className="project-service">
             {projects.map((project) => (
                 <ProjectComponent
                     title={project.title}

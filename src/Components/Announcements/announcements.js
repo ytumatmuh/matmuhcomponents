@@ -1,5 +1,6 @@
 import React from "react";
 import "./announcements.css";
+import ButtonCustom from "../CustomButton/button";
 
 const AnnouncementComp = ({ date, title, content, photoUrl }) => {
   return (
@@ -12,7 +13,7 @@ const AnnouncementComp = ({ date, title, content, photoUrl }) => {
           </div>
         </div>
         <p className="announcement-description">{content}</p>
-        <button className="read-more-button">Read More</button>
+        <ButtonCustom title={"Read More"} />
       </div>
       {photoUrl && (
         <img src={photoUrl} alt="Announcement" className="announcement-photo" />

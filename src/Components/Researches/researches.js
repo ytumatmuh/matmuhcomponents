@@ -3,9 +3,9 @@ import "./researches.css";
 
 const ResearchComponent = ({ title, subtitle }) => {
     return (
-        <div className="card">
-            <div className="card-title "> {title}</div>
-            <div className="card-description">{subtitle}</div>
+        <div className="research-card">
+            <div className="research-card-title "> {title}</div>
+            <div className="research-card-description">{subtitle}</div>
         </div>
     );
 };

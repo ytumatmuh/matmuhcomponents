@@ -3,15 +3,15 @@ import "./projectcomponent.css";
 
 const ProjectComponent = ({ title, imgUrl, subtitle }) => {
     return (
-        <div className="container">
-            <div className="container-image">
+        <div className="project-container">
+            <div className="project-container-image">
                 {imgUrl && (
-                    <img src={imgUrl} alt="Project" className="container-imageurl" />
+                    <img src={imgUrl} alt="Project" className="project-container-imageurl" />
                 )}
             </div>
 
-            <div className="container-title">{title}</div>
-            <div className="container-subtitle">{subtitle}</div>
+            <div className="project-container-title">{title}</div>
+            <div className="project-container-subtitle">{subtitle}</div>
         </div>
     );
 };

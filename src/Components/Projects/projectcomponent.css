@@ -1,4 +1,4 @@
-.container {
+.project-container {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -12,26 +12,33 @@
     cursor: pointer;
 }
 
-.container-title {
+.project-container-title {
     padding: 0.5em;
     font-family: "Newsreader", serif;
     font-size: 18px;
     font-weight: 700;
 }
 
-.container-image {
+.project-container-image {
     overflow: hidden;
     width: 15em;
     height: 30em;
 }
 
-.container-imageurl {
-    width: auto;
+.project-container-imageurl {
+    
     height: 100%;
 }
 
-.container-subtitle {
+.project-container-subtitle {
     padding: 0.5em;
     font-family: "Newsreader", serif;
     font-size: 14px;
+}
+
+
+@media only screen and (max-width:768px) {
+    .project-container{
+        justify-content: center;
+    }
 }

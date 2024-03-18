@@ -1,4 +1,4 @@
-.card {
+.research-card {
     border: 1px solid rgb(218, 215, 215);
     margin: 1em;
     padding: 1em;
@@ -7,7 +7,7 @@
     border-width: 0.1em;
 }
 
-.card-title {
+.research-card-title {
     font-family: "Newsreader", serif;
     font-size: 18px;
     font-weight: 700;
@@ -15,6 +15,6 @@
     transition: border-color 0.3s ease;
 }
 
-.card-description {
+.research-card-description {
     margin-top: 0.5em;
 }

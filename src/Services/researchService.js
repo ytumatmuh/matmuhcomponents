@@ -1,4 +1,5 @@
 import ResearchComponent from "../Components/Researches/researches";
+import './studiesService.css'
 
 const researches = [
     {
@@ -20,7 +21,7 @@ const researches = [
 
 function Research() {
     return (
-        <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <div className="research-service" >
             {researches.map((research) => (
                 <ResearchComponent
                     title={research.title}

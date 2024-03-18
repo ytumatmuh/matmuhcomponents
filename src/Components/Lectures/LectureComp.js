@@ -4,7 +4,7 @@ import { FiBook } from "react-icons/fi";
 
 const LectureComp = ({ name, content }) => {
   return (
-    <div className="container">
+    <div className="lecture-container">
       <div className="lecture">
         <div className="lecture-content">
           <h2 className="lecture-title">{name}</h2>
