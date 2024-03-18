@@ -1,0 +1,37 @@
+.container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 15em;
+    height: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.container-title {
+    padding: 0.5em;
+    font-family: "Newsreader", serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.container-image {
+    overflow: hidden;
+    width: 15em;
+    height: 30em;
+}
+
+.container-imageurl {
+    width: auto;
+    height: 100%;
+}
+
+.container-subtitle {
+    padding: 0.5em;
+    font-family: "Newsreader", serif;
+    font-size: 14px;
+}

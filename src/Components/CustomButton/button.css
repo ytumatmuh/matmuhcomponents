@@ -1,0 +1,19 @@
+.button {
+    margin: 1em;
+    padding: 0.5em 1em;
+    border-radius: 0.9em;
+    cursor: pointer;
+    background-color: rgb(218, 215, 215);
+    border: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.title {
+    font-family: "Newsreader", serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+}
