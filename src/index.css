@@ -17,7 +17,7 @@
 }
 
 *{
-  transition: 300ms;
+  transition: background-color 300ms;
 }
 
 body {
