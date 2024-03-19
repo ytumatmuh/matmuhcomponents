@@ -1,5 +1,6 @@
 import React from "react";
 import "./navbar.css";
+import NightToggle from "../NightModeToggle/nightToggle";
 
 function NavBar({
   onHomeTap,
@@ -15,7 +16,9 @@ function NavBar({
         <img alt="ytu-logo" src="/images/ytu-logo.webp" className="ytu-logo"/>
       </div>
       <div className="socialIcons">
+      
         <div className="drawerItem">
+          
           <span className="text" onClick={onHomeTap}>
             Home
           </span>
@@ -34,6 +37,7 @@ function NavBar({
           <div className="underline"></div>
         </div>
       </div>
+      <div className="bar-toggle"><NightToggle /></div>
     </div>
   );
 }

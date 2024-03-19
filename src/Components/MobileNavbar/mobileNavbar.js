@@ -4,6 +4,7 @@ import "./mobileNavbar.css";
 import Overlay from "../Overlay/overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import NightToggle from "../NightModeToggle/nightToggle";
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +36,9 @@ const MobileNavbar = () => {
             </li>
             <li className="mobile-navbar-item">
               <a href="#">About</a>
+            </li>
+            <li className="mobile-navbar-toggle">
+              <NightToggle />
             </li>
           </ul>
         </div>

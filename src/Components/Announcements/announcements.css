@@ -11,7 +11,7 @@
   font-weight: 300;
   font-size: 14px;
   margin-bottom: 10px;
-  color: #637587;
+  color: var(--body_secondary_color);
   font-family: "Newsreader", serif;
   font-optical-sizing: auto;
 }
@@ -28,7 +28,7 @@
   font-family: "Newsreader", serif;
   font-size: 20px;
   margin-bottom: 10px;
-  color: #212427;
+  color: var(--body_color);
 }
 
 .announcement-content {
@@ -36,24 +36,10 @@
   font-family: "Newsreader", serif;
   font-size: 16px;
   font-weight: 400;
-  color: #637587;
+  color: var(--body_secondary_color);
   width: 40%;
 }
 
-.read-more-button {
-  background-color: transparent;
-  color: #121417;
-  padding: 8px 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 300ms;
-  border: 1px solid #142658;
-}
-
-.read-more-button:hover {
-  background-color: #142658;
-  color: #f4f3f2;
-}
 
 @media screen and (max-width: 900px) {
   .announcement {

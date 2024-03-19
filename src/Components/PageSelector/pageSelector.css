@@ -24,18 +24,18 @@
   background-color: transparent;
   border-bottom: transparent 2px solid;
   transition: 300ms;
-  color: #212427;
+  color: var(--body_color);
 }
 
 .btn:hover {
   cursor: pointer;
-  border-bottom: 2px solid #142658;
+  border-bottom: 2px solid var(--highlight_color);
 }
 
 .btn.selected {
   cursor: pointer;
   transition: 300ms;
-  border-bottom: 2px solid #142658;
+  border-bottom: 2px solid var(--highlight_color);
 }
 
 @media only screen and (max-width: 768px) {

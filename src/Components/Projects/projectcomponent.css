@@ -17,6 +17,7 @@
     font-family: "Newsreader", serif;
     font-size: 18px;
     font-weight: 700;
+    color: var(--body_color);
 }
 
 .project-container-image {
@@ -26,7 +27,6 @@
 }
 
 .project-container-imageurl {
-    
     height: 100%;
 }
 
@@ -34,6 +34,7 @@
     padding: 0.5em;
     font-family: "Newsreader", serif;
     font-size: 14px;
+    color: var(--body_secondary_color);
 }
 
 

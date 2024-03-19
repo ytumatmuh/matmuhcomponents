@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
 
+:root{
+  --body_background: #F4F3F2;
+  --body_color: #212427;
+  --highlight_color: #142658;
+  --body_secondary_color: #637587;
+  --logo_color: brightness(0) saturate(100%) invert(10%) sepia(54%) saturate(3120%) hue-rotate(214deg) brightness(94%) contrast(92%);
+}
+
+[data-theme="dark"]{
+  --body_background: #212427;
+  --body_color: #F4F3F2;
+  --highlight_color: #ac996c;
+  --body_secondary_color: #F0EDE5;
+  --logo_color: brightness(0) saturate(100%) invert(90%) sepia(2%) saturate(502%) hue-rotate(7deg) brightness(105%) contrast(96%);
+}
+
+*{
+  transition: 300ms;
+}
+
 body {
   margin: 0;
   font-family: "Newsreader", serif;
@@ -7,8 +27,8 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F4F3F2;
-  color: #212427;
+  background-color: var(--body_background);
+  color: var(--body_color);
 }
 
 code {

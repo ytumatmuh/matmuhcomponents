@@ -1,8 +1,8 @@
 /* mobileNavbar.css */
 
 .mobile-navbar {
-  color: #212427;
-  background-color: #f4f3f2;
+  color: var(--body_color);
+  background-color: var(--body_background);
   padding: 10px 20px;
   border-bottom: 1px solid #e5e8eb;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@
   top: 60px;
   right: -120%;
   width: 100%;
-  background-color: #f4f3f2;
+  background-color: var(--body_background);
   transition: right 0.3s ease;
   text-align: center;
   border-radius: 25px;
@@ -64,7 +64,7 @@
 .mobile-navbar-item a {
   font-size: 18px;
   text-decoration: none;
-  color: #212427;
+  color: var(--body_color);
   border-bottom: 2px solid transparent;
   transition: 300ms;
   outline: none !important;
@@ -78,11 +78,15 @@
 }
 
 .mobile-navbar-item a:hover {
-  border-bottom: 2px solid #142658;
+  border-bottom: 2px solid var(--highlight_color);
   transition: 300ms;
 }
 
 /* FontAwesomeIcon stili */
 .fa-bars {
   font-size: 24px;
+}
+
+.mobile-navbar-toggle{
+  margin-top: 10px;
 }

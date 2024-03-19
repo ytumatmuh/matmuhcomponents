@@ -11,8 +11,8 @@
   top: 0;
   left: 0;
   z-index: 1000; /* Ensure it's above other elements */
-  border-bottom: 1px solid #e5e8eb;
-  background-color: #f4f3f2;
+  border-bottom: 1px solid var(--highlight_color);
+  background-color: var(--body_background);
 }
 
 .socialIcons {
@@ -52,7 +52,7 @@
 
 .text:hover {
   cursor: pointer;
-  border-bottom: 2px solid #142658;
+  border-bottom: 2px solid var(--highlight_color);
 }
 
 .ytu-logo-divider {
@@ -67,4 +67,18 @@
 .ytu-logo {
   height: 50px;
   width: auto;
+  background-color: transparent;
+  filter: var(--logo_color);
+}
+
+.ytu-logo img {
+  background-color: transparent;
+  filter: var(--logo_color);
+}
+
+.bar-toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
 }
