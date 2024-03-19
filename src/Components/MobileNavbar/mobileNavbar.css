@@ -19,6 +19,7 @@
 .mobile-navbar-logo img {
   height: 35px;
   width: auto;
+  filter: var(--logo_color);
 }
 
 .mobile-navbar-menu {
@@ -89,4 +90,6 @@
 
 .mobile-navbar-toggle{
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
