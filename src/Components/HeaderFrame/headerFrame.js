@@ -1,7 +1,10 @@
 import React from "react";
 import "./headerFrame.css";
+import { useTranslation } from "react-i18next";
 
 const HeaderFrame = () => {
+  const {t, i18n} = useTranslation();
+
   return (
     <div className="header-frame">
       <div className="image-frame">
@@ -9,8 +12,8 @@ const HeaderFrame = () => {
       </div>
 
       <div className="header-text">
-        <p className="header-school">Yıldız Teknik Üniversitesi</p>
-        <p className="header-title">Matematik Mühendisliği</p>
+        <p className="header-school">{t('ytu')}</p>
+        <p className="header-title">{t('matmuh')}</p>
       </div>
     </div>
   );

@@ -5,6 +5,8 @@ import Overlay from "../Overlay/overlay";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import NightToggle from "../NightModeToggle/nightToggle";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../LanguageSelector/languageSelector";
 
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +14,7 @@ const MobileNavbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const {t, i18n} = useTranslation();
 
   return (
     <nav className="mobile-navbar">
@@ -23,22 +26,25 @@ const MobileNavbar = () => {
         <div className={`mobile-navbar-menu ${isOpen ? "active" : ""}`}>
           <ul className="mobile-navbar-list">
             <li className="mobile-navbar-item">
-              <a href="">Home</a>
+              <a href="">{t('home')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">Department</a>
+              <a href="#">{t('depart')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">Research</a>
+              <a href="#">{t('research')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">Project</a>
+              <a href="#">{t('project')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">About</a>
+              <a href="#">{t('about')}</a>
             </li>
-            <li className="mobile-navbar-toggle">
+            <li className="mobile-navbar-addons">
               <NightToggle />
+            </li>
+            <li className="mobile-navbar-addons">
+              <LanguageSelector />
             </li>
           </ul>
         </div>

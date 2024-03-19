@@ -1,8 +1,11 @@
 import React from "react";
 import "./announcements.css";
 import ButtonCustom from "../CustomButton/button";
+import {useTranslation} from 'react-i18next'
 
 const AnnouncementComp = ({ date, title, content, photoUrl }) => {
+const {t, i18n} = useTranslation();
+
   return (
     <div className="announcement">
       <div className="announcement-content">
@@ -13,7 +16,7 @@ const AnnouncementComp = ({ date, title, content, photoUrl }) => {
           </div>
         </div>
         <p className="announcement-description">{content}</p>
-        <ButtonCustom title={"Read More"} />
+        <ButtonCustom title={t('rmore')} />
       </div>
       {photoUrl && (
         <img src={photoUrl} alt="Announcement" className="announcement-photo" />

@@ -1,6 +1,8 @@
 import React from "react";
 import "./navbar.css";
 import NightToggle from "../NightModeToggle/nightToggle";
+import { useTranslation } from "react-i18next";
+import LanguageSelector from "../LanguageSelector/languageSelector";
 
 function NavBar({
   onHomeTap,
@@ -9,7 +11,7 @@ function NavBar({
   onResearchTap,
   onAboutTap,
 }) {
-  
+  const {t, i18n} = useTranslation();
   return (
     <div className="bar">
       <div className="ytu-logo-divider">
@@ -20,24 +22,25 @@ function NavBar({
         <div className="drawerItem">
           
           <span className="text" onClick={onHomeTap}>
-            Home
+            {t('home')}
           </span>
           <span className="text" onClick={onDepTap}>
-            Department
+            {t('depart')}
           </span>
           <span className="text" onClick={onResearchTap}>
-            Research
+            {t('research')}
           </span>
           <span className="text" onClick={onProjectTap}>
-            Project
+            {t('project')}
           </span>
           <span className="text" onClick={onAboutTap}>
-            About
+            {t('about')}
           </span>
           <div className="underline"></div>
         </div>
       </div>
       <div className="bar-toggle"><NightToggle /></div>
+      <div className="bar-toggle"><LanguageSelector/></div>
     </div>
   );
 }
