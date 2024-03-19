@@ -16,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #5b8fe8;
+    background: linear-gradient(180deg, #a2b9e1,#5b8fe8, #3262b4) ;
     transition: 300ms;
     border-radius: 100px;
 }
@@ -39,7 +39,7 @@
 }
 
 .switch input:checked + .slider{
-    background-color: #151d40;
+    background: linear-gradient(180deg,#495072,#2d376a, #151d40 ) ;
 }
 
 .toggle-container{
