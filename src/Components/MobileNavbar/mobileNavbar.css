@@ -100,7 +100,9 @@
   font-size: 24px;
 }
 
+
 .mobile-navbar-addons{
   max-width: max-content;
   margin: auto;
+  padding-top: 20px;
 }
