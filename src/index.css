@@ -31,6 +31,10 @@ body {
   color: var(--body_color);
 }
 
+a{
+  color: var(--body_color);
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

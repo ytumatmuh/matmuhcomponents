@@ -9,37 +9,45 @@ const AnnouncementDetailComp = ({ announcement }) => {
   const { t } = useTranslation();
 
   return (
-    <div className="announcement">
-      <div className="announcement-content">
-        <div className="announcement-date">{announcement.date}</div>
-        <div className="announcement-header">
-          <div className="announcement-text">
-            <h2 className="announcement-title">{announcement.title}</h2>
+    <div className="announcement-detail">
+      {announcement.photoUrl && (
+        <img src={announcement.photoUrl} alt="Announcement" className="announcement-detail-photo" />
+      )}
+      <div className="announcement-detail-content">
+        <div className="announcement-detail-date">{announcement.date}</div>
+        <div className="announcement-detail-header">
+          <div className="announcement-detail-text">
+            <h2 className="announcement-detail-title">{announcement.title}</h2>
           </div>
         </div>
-        <p className="announcement-description">{announcement.subtitle}</p>
-        <ButtonCustom title={t('rmore')} />
+        <p className="announcement-detail-subtitle">{announcement.subtitle}</p>
+        <p className="announcement-detail-description">{announcement.content}</p>
       </div>
-      {announcement.photoUrl && (
-        <img src={announcement.photoUrl} alt="Announcement" className="announcement-photo" />
-      )}
+      
     </div>
   );
 };
 
 const AnnouncementDetail = () => {
-    const { id } = useParams();  // Access the ID from route parameter
-    const announcements = AnnouncementService.getAnnouncementById(id);
+  const { id } = useParams();
+  const announcements = AnnouncementService.getAnnouncement();
+  const announcement = announcements.find(announcement => announcement.id === parseInt(id));
+
+  if (!announcement) {
+    return <div>No announcements found for ID: {id}</div>;
+  }
+
   return (
     <div>
-      {announcements.map((announcement) => (
-        <AnnouncementDetailComp
-          key={announcement.id}
-          announcement={announcement}
-        />
-      ))}
+      <AnnouncementDetailComp
+        key={announcement.id}
+        announcement={announcement}
+      />
     </div>
   );
 };
 
-  export default AnnouncementDetail;
+
+export default AnnouncementDetail;
+
+
