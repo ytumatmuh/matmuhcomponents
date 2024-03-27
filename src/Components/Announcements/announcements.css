@@ -40,6 +40,9 @@
   width: 40%;
 }
 
+.announcement-content a{
+  text-decoration: none;
+}
 
 @media screen and (max-width: 900px) {
   .announcement {

@@ -1,5 +1,5 @@
 import React from "react";
-import Announcement from "../../Services/announcementService";
+import Announcement from "../../Components/Announcements/announcements";
 
 const Homepage = () => {
   return (

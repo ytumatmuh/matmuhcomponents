@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+.App a{
+  text-decoration: none;
+}
+
 .mobile-navbar-app{
   display: none;
 }
