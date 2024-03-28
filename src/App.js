@@ -4,6 +4,7 @@ import MobileNavbar from "./Components/MobileNavbar/mobileNavbar";
 import NavBar from "./Components/Navbar/navbar"
 import {Routes, Route, BrowserRouter, useParams } from 'react-router-dom';
 import AnnouncementDetail from "./Components/SingleAnnouncementComp/singleAnnouncement";
+import DepartmentSegment from "./Segments/DepartmentSegment/departmentSegment";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainFrame />} />
         <Route path="/announcements/:id" element={<AnnouncementDetail/>} />
+        <Route path="/department" element={<DepartmentSegment/>}/>
       </Routes>
     </div>
     </BrowserRouter>
