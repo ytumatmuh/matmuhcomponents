@@ -1,0 +1,15 @@
+.button {
+  background-color: transparent;
+  color: var(--body_color);
+  padding: 13px 26px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 300ms;
+  border: 1px solid var(--highlight_color);
+  max-width: max-content;
+}
+
+.button:hover {
+  background-color: var(--highlight_color);
+  color: #f4f3f2;
+}

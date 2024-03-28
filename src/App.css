@@ -2,5 +2,54 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0;
+}
+
+.App a{
+  text-decoration: none;
+}
+
+.mobile-navbar-app{
+  display: none;
+}
+
+
+@media only screen and (max-width: 768px){
+.App{
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  justify-content: center;
   
+}
+
+  .navbar-app{
+    display: none;
+  }
+
+  .mobile-navbar-app{
+    display: block;
+  }
+
+  button:focus, button:active{
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  a:focus, a:active{
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 }

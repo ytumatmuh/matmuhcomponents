@@ -1,0 +1,22 @@
+.research-card {
+    border: 1px solid var(--body_secondary_color);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    border-width: 1px;
+}
+
+.research-card-title {
+    font-family: "Newsreader", serif;
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    color: var(--body_color);
+}
+
+.research-card-description {
+    margin-top: 0.5em;
+    color: var(--body_secondary_color);
+}

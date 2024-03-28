@@ -1,0 +1,41 @@
+.selector-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-width: max-content;
+    align-items: center;
+}
+
+.flag-button-tr{
+    background-image: url('../../../public/images/turkbayrak.webp');
+    border: none;
+    height: 20px;
+    width: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 300ms;
+}
+
+.flag-button-en{
+    background-image: url('../../../public/images/ingilizbayrak.webp');
+    border: none;
+    height: 20px;
+    width: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 300ms;
+}
+
+
+.flag-button-tr:hover{
+    cursor: pointer;
+    height: 21px;
+    width: 32px;
+    transition: 300ms;
+}
+.flag-button-en:hover{
+    cursor: pointer;
+    height: 21px;
+    width: 32px;
+    transition: 300ms;
+}

@@ -1,8 +1,14 @@
-.main-cover{
-    display: flex;
-    flex-direction: column;
-    max-width: max-content;
-    justify-content: center;
-    margin: auto;
-    margin-top: 75px;
+.main-cover {
+  display: flex;
+  flex-direction: column;
+  max-width: max-content;
+  justify-content: center;
+  margin: auto;
+  margin-top: 75px;
+}
+
+@media only screen and (max-width: 768px) {
+  .main-cover {
+    margin-top: 0;
+  }
 }

@@ -2,38 +2,45 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  max-width: max-content;
+  width: 100%;
   margin: 0 auto;
 }
 
 .btn-cover {
-  gap: 80px;
+  width: 100%;
+  gap: 10%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-bottom: 25px;
 }
 
-.btn{
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    font-family: "Newsreader";
-    font-weight: 500;
-    background-color: transparent;
-    border-bottom: transparent 2px solid;
-    transition: 300ms;
-}
-
-.btn:hover{
+.btn {
+  border: none;
   cursor: pointer;
-  border-bottom: 2px solid #142658;
+  font-size: 18px;
+  font-family: "Newsreader";
+  font-weight: 500;
+  background-color: transparent;
+  border-bottom: transparent 2px solid;
+  transition: 300ms;
+  color: var(--body_color);
 }
 
-
-.btn.selected{
-    cursor: pointer;
-    transition: 300ms;
-    border-bottom: 2px solid #142658;
+.btn:hover {
+  cursor: pointer;
+  border-bottom: 2px solid var(--highlight_color);
 }
 
+.btn.selected {
+  cursor: pointer;
+  transition: 300ms;
+  border-bottom: 2px solid var(--highlight_color);
+}
+
+@media only screen and (max-width: 768px) {
+  .btn-cover {
+      margin-top: 30px;
+  }
+}
