@@ -34,7 +34,7 @@ const Announcement = () => {
   const announcements = AnnouncementService.getAnnouncement();
 
   return (
-    <div>
+    <div className="announcement-map-container">
       {announcements.map((announcement) => (
         <AnnouncementComp key={announcement.id} announcement={announcement} />
       ))}

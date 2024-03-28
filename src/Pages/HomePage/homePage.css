@@ -1,0 +1,4 @@
+.homepage-cover {
+    max-height: 400px; /* Adjust the height as per your requirement */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
