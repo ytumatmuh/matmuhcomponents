@@ -5,6 +5,7 @@ import Research from '../../Services/researchService';
 import Project from '../../Services/projectService';
 import ButtonCustom from '../../Components/CustomButton/button';
 import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
 const StudiesPage = () => {
   const {t, i18n} = useTranslation();
   return (
@@ -12,12 +13,16 @@ const StudiesPage = () => {
       <div className='studies-page-title'>{t('research')}</div>
       <div className='research-comp'><Research /></div>
       <div className='studies-seeMoreButton'>
+        <Link to={'/researchs'}>
         <ButtonCustom title={t('smore')} />
+        </Link>
       </div>
       <div className='studies-page-title'>{t('project')}</div>
       <div className='project-comp'><Project /></div>
       <div className='studies-seeMoreButton'>
+        <Link to={'/projects'}>
         <ButtonCustom title={t('smore')} />
+        </Link>
       </div>
     </div>
   )
