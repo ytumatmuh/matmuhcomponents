@@ -4,7 +4,6 @@
   max-width: max-content;
   justify-content: center;
   margin: auto;
-  margin-top: 75px;
 }
 
 @media only screen and (max-width: 768px) {

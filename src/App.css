@@ -13,6 +13,10 @@
   display: none;
 }
 
+.app-renderer{
+  margin-top: 75px;
+}
+
 
 @media only screen and (max-width: 768px){
 .App{
@@ -51,5 +55,9 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+  }
+
+  .app-renderer{
+    margin-top: 0;
   }
 }

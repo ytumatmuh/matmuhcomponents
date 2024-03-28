@@ -4,7 +4,6 @@
   color: var(--body_color);
   background-color: var(--body_background);
   padding: 10px 20px;
-  border-bottom: 1px solid #e5e8eb;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
   position: relative; /* Overlay'ı eklemek için relative konumlandırma */
   

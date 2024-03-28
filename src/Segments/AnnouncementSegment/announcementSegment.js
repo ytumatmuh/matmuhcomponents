@@ -1,6 +1,6 @@
 import React from "react";
-import "./announcements.css";
-import ButtonCustom from "../CustomButton/button";
+import "./announcementSegment.css";
+import ButtonCustom from "../../Components/CustomButton/button";
 import { useTranslation } from 'react-i18next'
 import AnnouncementService from '../../Services/announcementService'
 import { Link } from 'react-router-dom'
@@ -30,11 +30,13 @@ const AnnouncementComp = ({ announcement }) => {
 };
 
 
-const Announcement = () => {
-  const announcements = AnnouncementService.getAnnouncement().sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0, 2);
+const AnnouncementSegment = () => {
+const { t } = useTranslation();
+  const announcements = AnnouncementService.getAnnouncement();
 
   return (
     <div className="announcement-map-container">
+        <h1>{t('announ')}</h1>
       {announcements.map((announcement) => (
         <AnnouncementComp key={announcement.id} announcement={announcement} />
       ))}
@@ -42,4 +44,4 @@ const Announcement = () => {
   );
 };
 
-export default Announcement;
+export default AnnouncementSegment;

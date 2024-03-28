@@ -45,12 +45,11 @@
 }
 
 .announcement-map-container {
-  max-height: 400px; /* Adjust the height as per your requirement */
-  overflow-y: auto; /* Enable vertical scrolling */
   max-width: max-content;
   margin: auto;
-  padding: 25px;
+  padding: 30px;
 }
+
 
 @media screen and (max-width: 900px) {
   .announcement {
@@ -79,7 +78,4 @@
     justify-content: center;
   }
 
-  .announcement-map-container{
-    overflow: visible;
-  }
 }

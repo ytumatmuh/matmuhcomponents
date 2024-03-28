@@ -26,19 +26,22 @@ const MobileNavbar = () => {
         <div className={`mobile-navbar-menu ${isOpen ? "active" : ""}`}>
           <ul className="mobile-navbar-list">
             <li className="mobile-navbar-item">
-              <a href="">{t('home')}</a>
+              <a href="/">{t('home')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">{t('depart')}</a>
+              <a href="/announcements">{t('announ')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">{t('research')}</a>
+              <a href="/department">{t('depart')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">{t('project')}</a>
+              <a href="/researches">{t('research')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="#">{t('about')}</a>
+              <a href="/projects">{t('project')}</a>
+            </li>
+            <li className="mobile-navbar-item">
+              <a href="/about">{t('about')}</a>
             </li>
             <li className="mobile-navbar-addons">
               <NightToggle />
