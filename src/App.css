@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 0;
+  padding-bottom: 25px;
 }
 
 .App a{
