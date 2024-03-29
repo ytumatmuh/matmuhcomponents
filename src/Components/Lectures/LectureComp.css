@@ -67,4 +67,9 @@
     padding-left: 0;
     padding-right: 0;
   }
+
+  .icon-box{
+    width: 30px;
+    height: 30px;
+  }
 }

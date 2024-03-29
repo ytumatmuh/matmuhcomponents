@@ -18,6 +18,10 @@ function NavBar() {
             <span className="text">{t("home")}</span>
           </Link>
 
+          <Link to={`/announcements`}>
+            <span className="text">{t("announ")}</span>
+          </Link>
+
           <Link to={`/department`}>
             <span className="text">{t("depart")}</span>
           </Link>

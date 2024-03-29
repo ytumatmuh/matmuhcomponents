@@ -45,14 +45,13 @@
 }
 
 .announcement-map-container {
-  max-height: 400px; /* Adjust the height as per your requirement */
-  overflow-y: auto; /* Enable vertical scrolling */
   max-width: max-content;
   margin: auto;
-  padding: 25px;
+  padding: 30px;
 }
 
-@media screen and (max-width: 900px) {
+
+@media screen and (max-width: 768px) {
   .announcement {
     flex-direction: column-reverse;
     align-items: center;
@@ -61,7 +60,12 @@
   }
 
   .announcement-content {
-    width: 60%;
+    width: 75%;
+  }
+
+  .announcement-content a{
+    display: flex;
+    justify-content: center;
   }
 
   .announcement-photo {
@@ -79,7 +83,9 @@
     justify-content: center;
   }
 
-  .announcement-map-container{
-    overflow: visible;
+  .announcement-description{
+    margin-top: 0;
+    margin-bottom: 30px;
   }
+
 }

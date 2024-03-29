@@ -13,3 +13,10 @@
   background-color: var(--highlight_color);
   color: #f4f3f2;
 }
+
+@media only screen and (max-width: 768px){
+  .button{
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
