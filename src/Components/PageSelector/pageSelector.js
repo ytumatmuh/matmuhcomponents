@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Homepage from "../../Pages/HomePage/homePage";
 import StudiesPage from "../../Pages/StudiesPage/studiesPage";
-import LecturePage from "../../Pages/LecturePage/lecturePage";
 import "./pageSelector.css";
 import { useTranslation } from "react-i18next";
+import LectureSegment from "../../Segments/LectureSegment/lectureSegment";
 
 const PageSelector = () => {
   const [selectedPage, setSelectedPage] = useState(1);
@@ -38,7 +38,7 @@ const PageSelector = () => {
       </div>
       {selectedPage === 1 && <Homepage />}
       {selectedPage === 2 && <StudiesPage />}
-      {selectedPage === 3 && <LecturePage />}
+      {selectedPage === 3 && <LectureSegment />}
     </div>
   );
 };

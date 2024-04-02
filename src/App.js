@@ -6,6 +6,7 @@ import {Routes, Route, BrowserRouter, useParams } from 'react-router-dom';
 import AnnouncementDetail from "./Components/SingleAnnouncementComp/singleAnnouncement";
 import DepartmentSegment from "./Segments/DepartmentSegment/departmentSegment";
 import AnnouncementSegment from "./Segments/AnnouncementSegment/announcementSegment";
+import LectureSegment from "./Segments/LectureSegment/lectureSegment";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/announcements/:id" element={<AnnouncementDetail/>} />
         <Route path="/department" element={<DepartmentSegment/>}/>
         <Route path="/announcements" element={<AnnouncementSegment/>}/>
+        <Route path="/lectures" element={<LectureSegment/>}/>
       </Routes>
       </div>
       
