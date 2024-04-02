@@ -26,7 +26,7 @@ function NavBar() {
             <span className="text">{t("depart")}</span>
           </Link>
 
-          <Link to={`/researchs`}>
+          <Link to={`/research`}>
             <span className="text">{t("research")}</span>
           </Link>
 
