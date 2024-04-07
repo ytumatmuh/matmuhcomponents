@@ -35,7 +35,7 @@ const MobileNavbar = () => {
               <a href="/department">{t('depart')}</a>
             </li>
             <li className="mobile-navbar-item">
-              <a href="/researches">{t('research')}</a>
+              <a href="/research">{t('research')}</a>
             </li>
             <li className="mobile-navbar-item">
               <a href="/projects">{t('project')}</a>
