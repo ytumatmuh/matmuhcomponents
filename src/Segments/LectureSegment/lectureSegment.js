@@ -1,7 +1,7 @@
 import React from "react";
 import "./lectureSegment.css";
 import { FiBook } from "react-icons/fi";
-import LectureService from "../../Services/lectureService";
+import LectureService from "../../Services/lectureservice";
 
 const LectureComp = ({lecture}) => {
   return (
