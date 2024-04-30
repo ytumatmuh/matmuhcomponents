@@ -26,7 +26,7 @@ const AnnouncementService = {
         title: "2023-2024 Bahar Yarıyılı Lisans ve Lisansüstü Ders Programları (26.02.2024 Güncellendi)",
         subtitle: "Ders Program",
         content:
-          "  2023-2024 Bahar Yarıyılı Lisans Ders Programı (21.02.2024 Güncel) 2023-2024 Bahar Yarıyılı Lisansüstü Ders Programı (26.02.2024 Güncel) ",
+          "2023-2024 Bahar Yarıyılı Lisans Ders Programı (21.02.2024 Güncel) 2023-2024 Bahar Yarıyılı Lisansüstü Ders Programı (26.02.2024 Güncel) ",
         photoUrl: "https://iokul.com/blog/content/images/size/w960/2021/08/5695967.jpg",
       },
       // Add more announcements as needed

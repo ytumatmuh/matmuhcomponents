@@ -1,6 +1,5 @@
 import React from "react";
 import "./singleAnnouncement.css";
-import ButtonCustom from "../CustomButton/button";
 import { useTranslation } from 'react-i18next'
 import AnnouncementService from '../../Services/announcementService'
 import { useParams } from 'react-router-dom';
