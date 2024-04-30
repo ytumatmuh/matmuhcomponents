@@ -31,7 +31,7 @@ const AnnouncementComp = ({ announcement }) => {
 
 
 const Announcement = () => {
-  const announcements = AnnouncementService.getAnnouncement().sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0, 2);
+  const announcements = AnnouncementService.getAnnouncements().sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0, 2);
 
   return (
     <div className="announcement-map-container">

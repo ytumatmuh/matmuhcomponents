@@ -29,7 +29,7 @@ const AnnouncementDetailComp = ({ announcement }) => {
 
 const AnnouncementDetail = () => {
   const { id } = useParams();
-  const announcements = AnnouncementService.getAnnouncement();
+  const announcements = AnnouncementService.getAnnouncements();
   const announcement = announcements.find(announcement => announcement.id === parseInt(id));
 
   if (!announcement) {
