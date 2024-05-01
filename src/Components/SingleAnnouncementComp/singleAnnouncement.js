@@ -27,7 +27,7 @@ const AnnouncementDetailComp = ({ announcement }) => {
             <ul>
               {links.map((link, index) => (
                 <li key={link.id}>
-                  <a href={link} >
+                  <a href={`https://${link.link}`} >
                     {link.link}
                   </a>
                 </li>
