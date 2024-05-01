@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./announcementSegment.css";
 import ButtonCustom from "../../Components/CustomButton/button";
 import { useTranslation } from 'react-i18next'
-import AnnouncementService from '../../Services/announcementService'
 import axios from 'axios'; // Import Axios
 
 const AnnouncementComp = ({ announcement }) => {
@@ -37,18 +36,17 @@ const AnnouncementSegment = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch data from the first API endpoint
-        const data1 = await AnnouncementService();
+        
 
         // Fetch data from the second API endpoint
         const response = await axios.get('https://matmuhbackend.onrender.com/api/announcements/getAnnouncements/2');
         const data2 = response.data.data || [];
 
         // Merge the two arrays of announcements
-        const mergedData = [...data1, ...data2];
+        
 
         // Set the merged data in the state
-        setAnnouncements(mergedData);
+        setAnnouncements(data2);
       } catch (error) {
         console.error('Error fetching announcements:', error);
         // Handle error if needed
