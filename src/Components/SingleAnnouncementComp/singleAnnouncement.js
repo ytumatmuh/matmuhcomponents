@@ -5,8 +5,7 @@ import AnnouncementService from '../../Services/announcementService';
 const AnnouncementDetail = () => {
   const { id } = useParams();
   const [announcements, setAnnouncements] = useState([]);
-  const announcement = announcements.find(announcement => announcement.id === parseInt(id));
-
+  
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
@@ -20,13 +19,18 @@ const AnnouncementDetail = () => {
     fetchAnnouncements();
   }, []);
 
-  // Render loading state if announcements are still loading
+  // Render null if announcements are still loading
   if (announcements.length === 0) {
-    return <div>Loading...</div>;
+    return null;
   }
 
-  // Render announcement detail if announcement with the provided id exists
-  if (announcement) {
+  // Find the announcement with the provided id
+  const announcement = announcements.find(announcement => announcement.id === parseInt(id));
+
+  // Render null if announcement with the provided id is not found
+  if (!announcement) {
+    return null;
+  }
     return (
       <div>
         <img>{announcement.imageUrl}</img>
@@ -34,14 +38,10 @@ const AnnouncementDetail = () => {
         <h2>{announcement.title}</h2>
         <p>{announcement.content}</p>
         <p>{announcement.content}</p>
-        <p>{announcement.links}</p>
+        <a>{announcement.links}</a>
         
       </div>
     );
-  } else {
-    // Render not found message if announcement with the provided id does not exist
-    return <div>Announcement not found!</div>;
-  }
 };
 
 export default AnnouncementDetail;
