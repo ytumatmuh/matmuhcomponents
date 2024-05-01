@@ -47,11 +47,14 @@ const ProjectsAll = () => {
       fetchProjects();
     }, []);
     return (
-      <div className='project-service-all'>
+        <div className='center-project'>
+            <div className='project-service-all'>
         {projects.map((project) => (
           <ProjectsComponent key={project.id} project={project} />
         ))}
       </div>
+        </div>
+      
     );
   };
   

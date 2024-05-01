@@ -1,4 +1,9 @@
-
+.center-project{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
 
 .project-service-all{
     display: grid;
