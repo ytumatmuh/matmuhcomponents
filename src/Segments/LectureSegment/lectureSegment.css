@@ -13,10 +13,12 @@
 }
 
 .lecture-table thead{
+  box-shadow: 0 0 0 1px red;
   border-radius: 10px;
 }
 
 .lecture-table tbody{
+  box-shadow: 0 0 0 1px red;
   border-radius: 10px;
 }
 
