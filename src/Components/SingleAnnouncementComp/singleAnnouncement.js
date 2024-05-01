@@ -45,15 +45,16 @@ const AnnouncementDetail = () => {
 
     fetchAnnouncements();
   }, []);
+
+  // Add a check to ensure announcement is defined before rendering
   return (
     <div>
-      <AnnouncementDetailComp
-        key={announcement.id}
-        announcement={announcement}
-      />
+      {announcement && (
+        <AnnouncementDetailComp
+          key={announcement.id}
+          announcement={announcement}
+        />
+      )}
     </div>
   );
 };
-
-
-export default AnnouncementDetail;
