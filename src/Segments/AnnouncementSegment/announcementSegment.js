@@ -30,13 +30,16 @@ const AnnouncementComp = ({ announcement }) => {
 };
 
 const AnnouncementSegment = () => {
-  const { t } = useTranslation();
   const [announcements, setAnnouncements] = useState([]);
-
+  const { t } = useTranslation();
   useEffect(() => {
     const fetchAnnouncements = async () => {
-      const data = await AnnouncementService.getAnnouncements();
-      setAnnouncements(data);
+      try {
+        const data = await AnnouncementService();
+        setAnnouncements(data);
+      } catch (error) {
+        console.error('Error fetching announcements:', error);
+      }
     };
 
     fetchAnnouncements();
