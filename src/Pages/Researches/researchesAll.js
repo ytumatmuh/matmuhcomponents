@@ -28,7 +28,7 @@ const Researchs = () => {
     fetchResearches();
   }, []);
   return (
-    <div className='research-service-all'>
+    <div className='research-service'>
       {researches.map((research) => (
         <ResearchComp key={research.id} research={research} />
       ))}
