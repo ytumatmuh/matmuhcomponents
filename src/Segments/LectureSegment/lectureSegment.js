@@ -47,11 +47,36 @@ const LectureSegment = () => {
     return groups;
   }, {});
 
+  const getTermExpression = (termID) => {
+    switch (termID) {
+      case '1':
+        return '1. Yıl - Güz';
+      case '2':
+        return '1. Yıl - Bahar';
+      case '3':
+        return '2. Yıl - Güz';
+      case '4':
+        return '2. Yıl - Bahar';
+      case '5':
+        return '3. Yıl - Güz';
+      case '6':
+        return '3. Yıl - Bahar';
+      case '7':
+        return '4. Yıl - Güz';
+      case '8':
+        return '4. Yıl - Bahar';
+
+      // Diğer durumlar için buraya ekleyebilirsiniz
+      default:
+        return `Term ID: ${termID}`;
+    }
+  };
+
   return (
     <div className="lecture-wrapper">
       {Object.keys(groupedLectures).map((termID, index) => (
         <div key={index}>
-          <h2>Term ID: {termID}</h2>
+          <h2>{getTermExpression(termID)}</h2>
           <table className="lecture-table">
             <thead>
               <tr>

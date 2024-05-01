@@ -15,11 +15,13 @@
   border: 1px solid var(--highlight_color);
   padding: 8px;
   text-align: left;
+  border-radius: 10px;
 }
 
 /* Veri satırları */
 .lecture-table tbody td {
   border: 1px solid var(--highlight_color);
   padding: 8px;
+  border-radius: 10px;
 }
 
