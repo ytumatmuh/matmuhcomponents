@@ -1,11 +1,22 @@
 /* lectureSegment.css */
-
+.lecture-wrapper h2{
+  text-align: center;
+  font-size: 10px;
+}
 /* Tablo genel görünümü */
 .lecture-table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
   color: var(--body_color);
+  border-radius: 10px;
+}
+
+.lecture-table thead{
+  border-radius: 10px;
+}
+
+.lecture-table tbody{
   border-radius: 10px;
 }
 
