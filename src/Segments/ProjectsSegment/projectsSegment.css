@@ -43,6 +43,12 @@
     justify-content: space-between;
 }
 
+.all-projects-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media only screen and (max-width:768px) {
     .project-container-all{
         justify-content: center;
