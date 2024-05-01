@@ -21,6 +21,10 @@ const AnnouncementDetailComp = ({ announcement }) => {
           </div>
         </div>
         <p className="announcement-detail-description">{announcement.content}</p>
+        <ul>
+          <li><a href={announcement.links}></a></li>
+        </ul>
+        
         
       </div>
       
@@ -28,10 +32,14 @@ const AnnouncementDetailComp = ({ announcement }) => {
   );
 };
 
+
+
 const AnnouncementDetail = () => {
   const { id } = useParams();
   const [announcements, setAnnouncements] = useState([]);
   const announcement = announcements.find(announcement => announcement.id === parseInt(id));
+
+  
 
   useEffect(() => {
     const fetchAnnouncements = async () => {
