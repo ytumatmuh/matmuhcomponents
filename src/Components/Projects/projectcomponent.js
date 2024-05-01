@@ -3,6 +3,15 @@ import ProjectSegmentService from "../../Services/projectSegmentService";
 import React, { useState, useEffect } from "react";
 
 const ProjectComponent = ({ project }) => {
+    const dateObject = new Date(project.date);
+
+    // Tarihi GG/AA/YYYY formatına dönüştürme
+    const formattedDate = dateObject.toLocaleDateString("tr-TR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
+
     return (
         <div className="project-container" key={project.id}>
             <div className="project-container-image">
@@ -12,7 +21,7 @@ const ProjectComponent = ({ project }) => {
             </div>
             <div className="project-container-title">{project.name}</div>
             <div className="project-container-subtitle">{project.description}</div>
-            <div className="project-container-subtitle">{project.date}</div>
+            <div className="project-container-subtitle">{formattedDate}</div>
         </div>
     );
 };
