@@ -2,7 +2,7 @@ import "./projectsSegment.css";
 import ProjectService from "../../Services/projectService";
 import React, { useState, useEffect } from "react";
 
-const ProjectComponent = ({ project }) => {
+const ProjectsComponent = ({ project }) => {
     const dateObject = new Date(project.date);
 
     // Tarihi GG/AA/YYYY formatına dönüştürme
@@ -46,7 +46,7 @@ const ProjectsAll = () => {
     return (
       <div className='project-service-all'>
         {projects.map((project) => (
-          <ProjectComponent key={project.id} project={project} />
+          <ProjectsComponent key={project.id} project={project} />
         ))}
       </div>
     );
