@@ -37,6 +37,9 @@
     color: var(--body_secondary_color);
 }
 
+.project-service{
+    display: flex;
+}
 
 @media only screen and (max-width:768px) {
     .project-container{
