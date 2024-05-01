@@ -23,8 +23,8 @@ const AnnouncementComp = ({ announcement }) => {
           <ButtonCustom title={t('rmore')} />
         </Link>
       </div>
-      {announcement.photoUrl && (
-        <img src={announcement.photoUrl} alt="Announcement" className="announcement-photo" />
+      {announcement.imageUrl && (
+        <img src={announcement.imageUrl} alt="Announcement" className="announcement-photo" />
       )}
     </div>
   );
