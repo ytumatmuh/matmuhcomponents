@@ -18,7 +18,6 @@ const AnnouncementComp = ({ announcement }) => {
             <h2 className="announcement-title">{announcement.title}</h2>
           </div>
         </div>
-        <p className="announcement-description">{announcement.subtitle}</p>
         <Link to={`/announcements/${announcement.id}`}>
           <ButtonCustom title={t('rmore')} />
         </Link>

@@ -7,11 +7,19 @@ import { Link } from 'react-router-dom'
 
 const AnnouncementComp = ({ announcement }) => {
   const { t } = useTranslation();
+  const dateObject = new Date(announcement.publishDate);
+
+  // Tarihi GG/AA/YYYY formatına dönüştürme
+  const formattedDate = dateObject.toLocaleDateString("tr-TR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
 
   return (
     <div className="announcement">
       <div className="announcement-content" key={announcement.id}>
-        <div className="announcement-date">{announcement.publishDate}</div> {/* Assuming publishDate is the date field */}
+        <div className="announcement-date">{formattedDate}</div> {/* Assuming publishDate is the date field */}
         <div className="announcement-header">
           <div className="announcement-text">
             <h2 className="announcement-title">{announcement.title}</h2>
