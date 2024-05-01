@@ -13,19 +13,19 @@
 }
 
 .lecture-table thead{
-  box-shadow: 0 0 0 1px red;
+  box-shadow: 0 0 0 1px var(--highlight_color);
   border-radius: 10px;
 }
 
 .lecture-table tbody{
-  box-shadow: 0 0 0 1px red;
+  box-shadow: 0 0 0 1px var(--highlight_color);
   border-radius: 10px;
 }
 
 /* Başlık satırı */
 .lecture-table thead th {
   background-color: var(--body_background);
-  border: 1px solid var(--highlight_color);
+  
   padding: 8px;
   text-align: left;
   border-radius: 10px;
@@ -33,7 +33,7 @@
 
 /* Veri satırları */
 .lecture-table tbody td {
-  border: 1px solid var(--highlight_color);
+  
   padding: 8px;
   border-radius: 10px;
 }
