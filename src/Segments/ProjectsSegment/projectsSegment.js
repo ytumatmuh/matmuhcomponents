@@ -13,8 +13,8 @@ const ProjectsComponent = ({ project }) => {
     });
 
     return (
-        <div className="all-projects-container">
-            <div className="project-container-all" key={project.id}>
+       
+            <div className="project-container" key={project.id}>
             <div className="project-container-image">
                 {project.imageUrl && (
                     <img src={project.imageUrl} alt="Project" className="project-container-imageurl" />
@@ -24,7 +24,7 @@ const ProjectsComponent = ({ project }) => {
             <div className="project-container-subtitle">{project.description}</div>
             <div className="project-container-subtitle">{formattedDate}</div>
         </div>
-        </div>
+        
         
     );
 };

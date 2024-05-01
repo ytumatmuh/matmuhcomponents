@@ -1,17 +1,16 @@
-.project-container-all {
+.project-container {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     width: 15em;
     height: 30em;
-    display: grid;
-    grid-template-columns: 1fr; /* Tüm öğeleri tek bir sütun içinde göster */
-    gap: 20px; /* Öğeler arası boşluk */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: 1em;
     cursor: pointer;
 }
-
 
 .project-container-title {
     padding: 0.5em;
@@ -39,18 +38,13 @@
 }
 
 .project-service-all{
-    display: flex;
-    justify-content: space-between;
-}
-
-.all-projects-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
+    gap: 20px; /* Öğeler arası boşluk */
 }
 
 @media only screen and (max-width:768px) {
-    .project-container-all{
+    .project-container{
         justify-content: center;
     }
 }
