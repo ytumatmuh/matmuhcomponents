@@ -17,8 +17,8 @@
 }
 
 .announcement-photo {
-  width: 300px;
-  height: 150px;
+  width: 30%;
+  height: 30%;
   border-radius: 18px;
   margin-left: 40px;
 }
@@ -73,8 +73,8 @@
   }
 
   .announcement-photo {
-    width: 240px;
-    height: 120px;
+    width: 40%;
+    height: 40%;
   }
 
   .announcement-photo {
