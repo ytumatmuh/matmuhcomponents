@@ -58,3 +58,6 @@ const AnnouncementDetail = () => {
     </div>
   );
 };
+
+
+export default AnnouncementDetail;
