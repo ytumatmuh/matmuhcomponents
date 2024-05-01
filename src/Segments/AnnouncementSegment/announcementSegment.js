@@ -35,8 +35,13 @@ const AnnouncementSegment = () => {
 
   useEffect(() => {
     const fetchAnnouncements = async () => {
-      const data = await AnnouncementService.getAnnouncements();
-      setAnnouncements(data);
+      try {
+        const data = await AnnouncementService(); // Call the function without .getAnnouncements()
+        setAnnouncements(data);
+      } catch (error) {
+        console.error('Error fetching announcements:', error);
+        // Handle error if needed
+      }
     };
 
     fetchAnnouncements();

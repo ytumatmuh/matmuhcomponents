@@ -1,9 +1,10 @@
-import React from "react";
+// Announcement.js
+import React, { useState, useEffect } from "react";
 import "./announcements.css";
 import ButtonCustom from "../CustomButton/button";
-import { useTranslation } from 'react-i18next'
-import AnnouncementService from '../../Services/announcementService'
-import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
+import AnnouncementService from '../../Services/announcementService'; // Correct import statement
+import { Link } from 'react-router-dom';
 
 const AnnouncementComp = ({ announcement }) => {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ const AnnouncementComp = ({ announcement }) => {
           </div>
         </div>
         <p className="announcement-description">{announcement.subtitle}</p>
-        <Link to={`/announcements/${announcement.id}`}>  {/* Pass ID as parameter */}
+        <Link to={`/announcements/${announcement.id}`}>
           <ButtonCustom title={t('rmore')} />
         </Link>
       </div>
@@ -29,9 +30,21 @@ const AnnouncementComp = ({ announcement }) => {
   );
 };
 
-
 const Announcement = () => {
-  const announcements = AnnouncementService.getAnnouncements().sort((a,b) => new Date(b.date) - new Date(a.date)).slice(0, 2);
+  const [announcements, setAnnouncements] = useState([]);
+
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const data = await AnnouncementService();
+        setAnnouncements(data);
+      } catch (error) {
+        console.error('Error fetching announcements:', error);
+      }
+    };
+
+    fetchAnnouncements();
+  }, []);
 
   return (
     <div className="announcement-map-container">

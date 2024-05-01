@@ -6,7 +6,7 @@ const API_URL = 'https://matmuhbackend.onrender.com/api/announcements/getAnnounc
 const getAnnouncements = async () => {
   try {
     const response = await axios.get(API_URL);
-    return response.data.data; // Extracting the data from the response
+    return response.data.data || []; // Return an empty array if response.data.data is falsy
   } catch (error) {
     console.error('Error fetching announcements:', error);
     return []; // Return an empty array in case of error
