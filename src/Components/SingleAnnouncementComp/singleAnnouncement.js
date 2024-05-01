@@ -21,7 +21,7 @@ const AnnouncementDetailComp = ({ announcement }) => {
           </div>
         </div>
         <p className="announcement-detail-description">{announcement.content}</p>
-        <a>{announcement.links}</a>
+        
       </div>
       
     </div>
