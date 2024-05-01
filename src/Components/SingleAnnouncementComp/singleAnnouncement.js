@@ -30,11 +30,13 @@ const AnnouncementDetail = () => {
       <p>{announcement.publishDate}</p>
       <h2>{announcement.title}</h2>
       <p>{announcement.content}</p>
-      <ul>
-        {announcement.links.map(link => (
-          <li key={link.id}><a href={link.link}>{link.link}</a></li>
-        ))}
-      </ul>
+      {announcement.links && announcement.links.length > 0 && (
+        <ul>
+          {announcement.links.map(link => (
+            <li key={link.id}><a href={link.link}>{link.link}</a></li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
