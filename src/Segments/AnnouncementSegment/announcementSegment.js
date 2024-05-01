@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./announcementSegment.css";
 import ButtonCustom from "../../Components/CustomButton/button";
 import { useTranslation } from 'react-i18next'
-import axios from 'axios'; // Import Axios
+import AnnouncementSegmentService from '../../Services/announcementSegmentService'
+import { Link } from 'react-router-dom'
 
 const AnnouncementComp = ({ announcement }) => {
   const { t } = useTranslation();
@@ -10,17 +11,16 @@ const AnnouncementComp = ({ announcement }) => {
   return (
     <div className="announcement">
       <div className="announcement-content" key={announcement.id}>
-        <div className="announcement-date">{announcement.publishDate}</div>
+        <div className="announcement-date">{announcement.publishDate}</div> {/* Assuming publishDate is the date field */}
         <div className="announcement-header">
           <div className="announcement-text">
             <h2 className="announcement-title">{announcement.title}</h2>
           </div>
         </div>
-        <p className="announcement-description">{announcement.content}</p>
-        {/* Pass ID as parameter */}
-        <a href={`/announcements/${announcement.id}`}>
+        <p className="announcement-description">{announcement.content}</p> {/* Assuming content is the subtitle */}
+        <Link to={`/announcements/${announcement.id}`}>  {/* Pass ID as parameter */}
           <ButtonCustom title={t('rmore')} />
-        </a>
+        </Link>
       </div>
       {announcement.imageUrl && (
         <img src={announcement.imageUrl} alt="Announcement" className="announcement-photo" />
@@ -34,26 +34,17 @@ const AnnouncementSegment = () => {
   const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchAnnouncements = async () => {
       try {
-        
-
-        // Fetch data from the second API endpoint
-        const response = await axios.get('https://matmuhbackend.onrender.com/api/announcements/getAnnouncements/2');
-        const data2 = response.data.data || [];
-
-        // Merge the two arrays of announcements
-        
-
-        // Set the merged data in the state
-        setAnnouncements(data2);
+        const data = await AnnouncementSegmentService(); // Call the function without .getAnnouncements()
+        setAnnouncements(data);
       } catch (error) {
         console.error('Error fetching announcements:', error);
         // Handle error if needed
       }
     };
 
-    fetchData();
+    fetchAnnouncements();
   }, []);
 
   return (
