@@ -1,50 +1,16 @@
-const LectureService = {
-  getLecture: () => {
+// AnnouncementService.js
+import axios from 'axios';
 
-    return [
-      {
-        id: 1,
-        name: "Introduction to Applied Mathematics",
-        content: [
-          {
-            id: 1,
-            desc: "Syllabus of Introduction to Applied Mathematics",
-            contentUrl: "",
-          },
-          {
-            id: 2,
-            desc: "Notes of Introduction to Applied Mathematics",
-            contentUrl: "",
-          },
-        ],
-      },
-      {
-        id: 2,
-        name: "Physics 2",
-        content: [
-          {
-            id: 1,
-            desc: "Syllabus of Physics 2",
-            contentUrl: "",
-          },
-          {
-            id: 2,
-            desc: "Notes of Physics 2",
-            contentUrl: "",
-          },
-        ],
-      },
-      // Add more announcements as needed
-    ];
-  
-  },
+const API_URL = 'https://matmuhbackend.onrender.com/api/lectures/getLectures';
 
-  getLectureById: (id) => {
-    const lectures = LectureService.getLecture();
-    return lectures.find(lecture=>lecture.id ==id)
+const getLectures = async () => {
+  try {
+    const response = await axios.get(API_URL);
+    return response.data.data || []; // Return an empty array if response.data.data is falsy
+  } catch (error) {
+    console.error('Error fetching Lectures:', error);
+    return []; // Return an empty array in case of error
   }
-  
-}
+};
 
-
-export default LectureService;
+export default getLectures;
