@@ -43,5 +43,6 @@
 @media only screen and (max-width: 768px){
   .lecture-wrapper{
     font-size: 11px;
+    margin: 5px;
   }
 }
