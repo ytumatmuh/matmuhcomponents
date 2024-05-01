@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 
 const AnnouncementDetailComp = ({ announcement }) => {
   const { t } = useTranslation();
+  const { imageUrl, publishDate, title, content, links } = announcement;
 
   return (
     <div className="announcement-detail">
@@ -21,10 +22,20 @@ const AnnouncementDetailComp = ({ announcement }) => {
           </div>
         </div>
         <p className="announcement-detail-description">{announcement.content}</p>
-        <ul>
-          <li><a href={announcement.links}></a></li>
-        </ul>
-        
+        {links && links.length > 0 && (
+          <div className="announcement-detail-links">
+            <h3>Links:</h3>
+            <ul>
+              {links.map((link, index) => (
+                <li key={link.id}>
+                  <a href={link.link} target="_blank" rel="noopener noreferrer">
+                    {link.link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         
       </div>
       
