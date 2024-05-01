@@ -1,4 +1,4 @@
-import "./projectSegment.css";
+import "./projectsSegment.css";
 import ProjectService from "../../Services/projectService";
 import React, { useState, useEffect } from "react";
 
