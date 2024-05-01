@@ -50,6 +50,9 @@
   .announcement-detail-links li{
     list-style: none;
   }
+  .announcement-detail-links ul{
+    margin: 0;
+  }
   
   @media screen and (max-width: 768px) {
     .announcement-detail {

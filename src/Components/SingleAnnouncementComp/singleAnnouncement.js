@@ -25,10 +25,10 @@ const AnnouncementDetailComp = ({ announcement }) => {
         {links && links.length > 0 && (
           <div className="announcement-detail-links">
             <ul>
-              {links.map((link, index) => (
-                <li key={link.id}>
-                  <a href={link.link} target="_blank" rel="noopener noreferrer">
-                    {link.link}
+              {links.map((link, id) => (
+                <li key={id}>
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                    {link}
                   </a>
                 </li>
               ))}
