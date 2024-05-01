@@ -20,8 +20,8 @@
   }
   
   .announcement-detail-photo {
-    width: 400px;
-    height: 200px;
+    width: 20%;
+    height: 20%;
     border-radius: 18px;
     
   }
@@ -68,8 +68,8 @@
     }
   
     .announcement-detail-photo {
-      width: 250px;
-      height: 125px;
+      width: 45%;
+      height: 45%;
     }
   
     .announcement-detail-photo {
