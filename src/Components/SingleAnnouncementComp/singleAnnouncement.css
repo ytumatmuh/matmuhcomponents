@@ -46,6 +46,10 @@
   .announcement-detail-subtitle{
     margin-bottom: 40px;
   }
+
+  .announcement-detail-links li{
+    list-style: none;
+  }
   
   @media screen and (max-width: 768px) {
     .announcement-detail {
