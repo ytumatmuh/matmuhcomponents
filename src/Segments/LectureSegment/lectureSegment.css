@@ -5,19 +5,20 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
+  color: var(--body_color);
 }
 
 /* Başlık satırı */
 .lecture-table thead th {
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
+  background-color: var(--body_background);
+  border: 1px solid var(--highlight_color);
   padding: 8px;
   text-align: left;
 }
 
 /* Veri satırları */
 .lecture-table tbody td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--highlight_color);
   padding: 8px;
 }
 
