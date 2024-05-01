@@ -44,7 +44,7 @@ const ProjectsAll = () => {
       fetchProjects();
     }, []);
     return (
-      <div className='project-service'>
+      <div className='project-service-all'>
         {projects.map((project) => (
           <ProjectComponent key={project.id} project={project} />
         ))}
