@@ -29,9 +29,13 @@ const AnnouncementDetail = () => {
   if (announcement) {
     return (
       <div>
+        <img>{announcement.imageUrl}</img>
+        <p>{announcement.publishDate}</p>
         <h2>{announcement.title}</h2>
         <p>{announcement.content}</p>
-        {/* Add more details if needed */}
+        <p>{announcement.content}</p>
+        <p>{announcement.links}</p>
+        
       </div>
     );
   } else {
