@@ -1,5 +1,5 @@
 import "../../Segments/ResearchSegment/researchComp.css"
-import "../../Segments/ResearchSegment/researchSegment.css"
+import './researchesAll.css'
 import ResearchService from "../../Services/researchService";
 import React, { useState, useEffect } from "react";
 
@@ -28,7 +28,7 @@ const Researchs = () => {
     fetchResearches();
   }, []);
   return (
-    <div className='research-service'>
+    <div className='research-service-all'>
       {researches.map((research) => (
         <ResearchComp key={research.id} research={research} />
       ))}
