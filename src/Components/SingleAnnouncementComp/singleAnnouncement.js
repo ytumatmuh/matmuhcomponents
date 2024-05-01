@@ -8,6 +8,14 @@ import { useParams } from 'react-router-dom';
 const AnnouncementDetailComp = ({ announcement }) => {
   const { t } = useTranslation();
   const { imageUrl, publishDate, title, content, links } = announcement;
+  const dateObject = new Date(announcement.publishDate);
+
+  // Tarihi GG/AA/YYYY formatına dönüştürme
+  const formattedDate = dateObject.toLocaleDateString("tr-TR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
 
   return (
     <div className="announcement-detail">
@@ -15,7 +23,7 @@ const AnnouncementDetailComp = ({ announcement }) => {
         <img src={announcement.imageUrl} alt="Announcement" className="announcement-detail-photo" />
       )}
       <div className="announcement-detail-content">
-        <div className="announcement-detail-date">{announcement.publishDate}</div>
+        <div className="announcement-detail-date">{formattedDate}</div>
         <div className="announcement-detail-header">
           <div className="announcement-detail-text">
             <h2 className="announcement-detail-title">{announcement.title}</h2>
