@@ -1,11 +1,11 @@
-.research-service{
+.research-service-all{
     display: flex;
     justify-content: space-around;
 }
 
 
 @media only screen and (max-width:768px){
-    .research-service{
+    .research-service-all{
         flex-direction: column;
     }
 
