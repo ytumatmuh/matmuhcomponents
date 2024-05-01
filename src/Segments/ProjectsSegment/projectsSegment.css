@@ -1,41 +1,4 @@
-.project-container {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    width: 15em;
-    height: 30em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1em;
-    cursor: pointer;
-}
 
-.project-container-title {
-    padding: 0.5em;
-    font-family: "Newsreader", serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--body_color);
-}
-
-.project-container-image {
-    overflow: hidden;
-    width: 15em;
-    height: 30em;
-}
-
-.project-container-imageurl {
-    height: 100%;
-}
-
-.project-container-subtitle {
-    padding: 0.5em;
-    font-family: "Newsreader", serif;
-    font-size: 14px;
-    color: var(--body_secondary_color);
-}
 
 .project-service-all{
     display: grid;
@@ -43,8 +6,3 @@
     gap: 20px; /* Öğeler arası boşluk */
 }
 
-@media only screen and (max-width:768px) {
-    .project-container{
-        justify-content: center;
-    }
-}
