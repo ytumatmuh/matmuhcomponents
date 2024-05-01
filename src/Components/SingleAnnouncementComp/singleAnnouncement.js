@@ -9,17 +9,16 @@ const AnnouncementDetail = () => {
   useEffect(() => {
     const fetchAnnouncement = async () => {
       try {
-        const data = await AnnouncementService(id); // Call AnnouncementService with id parameter
+        const data = await AnnouncementService(parseInt(id)); // id'yi parseInt ile sayıya dönüştür
         setAnnouncement(data);
       } catch (error) {
-        console.error('Error fetching announcement:', error);
+        console.error('Duyuru alınırken bir hata oluştu:', error);
       }
     };
 
     fetchAnnouncement();
-  }, [id]); // Include id in the dependency array
+  }, [id]);
 
-  // Render null if announcement is still loading
   if (!announcement) {
     return null;
   }
