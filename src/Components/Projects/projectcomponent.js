@@ -26,6 +26,8 @@ const ProjectComponent = ({ project }) => {
     );
 };
 
+
+
 const Projects = () => {
 
     const [projects, setProjects] = useState([]);

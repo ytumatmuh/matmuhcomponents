@@ -8,6 +8,7 @@ import DepartmentSegment from "./Segments/DepartmentSegment/departmentSegment";
 import AnnouncementSegment from "./Segments/AnnouncementSegment/announcementSegment";
 import LectureSegment from "./Segments/LectureSegment/lectureSegment";
 import Researchs from "./Pages/Researches/researchesAll";
+import ProjectsAll from "./Segments/ProjectsSegment/projectsSegment";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/announcements" element={<AnnouncementSegment/>}/>
         <Route path="/lectures" element={<LectureSegment/>}/>
         <Route path="/research" element={<Researchs/>}/>
+        <Route path="/projects" element={<ProjectsAll/>}/>
       </Routes>
       </div>
       
