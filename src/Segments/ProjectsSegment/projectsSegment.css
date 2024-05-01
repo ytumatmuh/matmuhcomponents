@@ -37,9 +37,10 @@
     color: var(--body_secondary_color);
 }
 
-.project-service{
-    display: flex;
-    justify-content: space-between;
+.project-service-all{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
+    gap: 20px; /* Öğeler arası boşluk */
 }
 
 @media only screen and (max-width:768px) {
