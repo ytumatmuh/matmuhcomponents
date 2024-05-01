@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./announcements.css";
 import ButtonCustom from "../CustomButton/button";
 import { useTranslation } from 'react-i18next';
-import AnnouncementService from '../../Services/announcementService'; // Correct import statement
+import AnnouncementSegmentService from '../../Services/announcementSegmentService'; // Correct import statement
 import { Link } from 'react-router-dom';
 
 const AnnouncementComp = ({ announcement }) => {
@@ -36,7 +36,7 @@ const Announcement = () => {
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
-        const data = await AnnouncementService();
+        const data = await AnnouncementSegmentService();
         setAnnouncements(data);
       } catch (error) {
         console.error('Error fetching announcements:', error);

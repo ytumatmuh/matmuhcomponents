@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./announcementSegment.css";
 import ButtonCustom from "../../Components/CustomButton/button";
 import { useTranslation } from 'react-i18next'
-import AnnouncementSegmentService from '../../Services/announcementSegmentService'
+import AnnouncementService from '../../Services/announcementService'
 import { Link } from 'react-router-dom'
 
 const AnnouncementComp = ({ announcement }) => {
@@ -35,13 +35,8 @@ const AnnouncementSegment = () => {
 
   useEffect(() => {
     const fetchAnnouncements = async () => {
-      try {
-        const data = await AnnouncementSegmentService(); // Call the function without .getAnnouncements()
-        setAnnouncements(data);
-      } catch (error) {
-        console.error('Error fetching announcements:', error);
-        // Handle error if needed
-      }
+      const data = await AnnouncementService.getAnnouncements();
+      setAnnouncements(data);
     };
 
     fetchAnnouncements();

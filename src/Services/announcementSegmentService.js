@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const API_URL = 'https://matmuhbackend.onrender.com/api/announcements/getAnnouncements/2';
 
-const getAnnouncements = async () => {
+const getSegmentAnnouncements = async () => {
   try {
     const response = await axios.get(API_URL);
     return response.data.data || []; // Return an empty array if response.data.data is falsy
@@ -13,4 +13,4 @@ const getAnnouncements = async () => {
   }
 };
 
-export default getAnnouncements;
+export default getSegmentAnnouncements;
