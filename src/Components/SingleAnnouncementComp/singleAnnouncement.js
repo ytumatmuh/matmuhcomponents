@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./singleAnnouncement.css";
 import { useTranslation } from 'react-i18next'
 import AnnouncementService from '../../Services/announcementService'
@@ -29,13 +29,22 @@ const AnnouncementDetailComp = ({ announcement }) => {
 
 const AnnouncementDetail = () => {
   const { id } = useParams();
-  const announcements = AnnouncementService.getAnnouncements();
+  const [announcements, setAnnouncements] = useState([]);
   const announcement = announcements.find(announcement => announcement.id === parseInt(id));
 
-  if (!announcement) {
-    return <div>No announcements found for ID: {id}</div>;
-  }
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const data = await AnnouncementService();
+        setAnnouncements(data);
+      } catch (error) {
+        console.error('Error fetching announcements:', error);
+      }
+    };
 
+    fetchAnnouncements();
+  }, []);
+  
   return (
     <div>
       <AnnouncementDetailComp
