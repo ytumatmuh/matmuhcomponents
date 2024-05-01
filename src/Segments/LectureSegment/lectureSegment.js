@@ -37,34 +37,49 @@ const LectureSegment = () => {
     fetchLectures();
   }, []);
 
-  return(
+  // Term ID'lerine göre dersleri grupla
+  const groupedLectures = lectures.reduce((groups, lecture) => {
+    const termID = lecture.term;
+    if (!groups[termID]) {
+      groups[termID] = [];
+    }
+    groups[termID].push(lecture);
+    return groups;
+  }, {});
+
+  return (
     <div className="lecture-wrapper">
-      <table className="lecture-table">
-        <thead>
-          <tr>
-            <th>Ders Adı</th>
-            <th>Ders Kodu</th>
-            <th>Ders Dönemi</th>
-            <th>Ders Kredisi</th>
-            <th>link 1</th>
-            <th>Link 2</th>
-          </tr>
-        </thead>
-        <tbody>
-          {lectures.map((lecture, index) => (
-            <tr key={index}>
-              <td>{lecture.name}</td>
-              <td>{lecture.lectureCode}</td>
-              <td>{lecture.term}</td>
-              <td>{lecture.credit}</td>
-              <td>{lecture.syllabusLink}</td>
-              <td>{lecture.notesLink}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {Object.keys(groupedLectures).map((termID, index) => (
+        <div key={index}>
+          <h2>Term ID: {termID}</h2>
+          <table className="lecture-table">
+            <thead>
+              <tr>
+                <th>Ders Adı</th>
+                <th>Kodu</th>
+                <th>Dönem</th>
+                <th>Kredi</th>
+                <th>Program Linki</th>
+                <th>Notlar Linki</th>
+              </tr>
+            </thead>
+            <tbody>
+              {groupedLectures[termID].map((lecture, index) => (
+                <tr key={index}>
+                  <td>{lecture.name}</td>
+                  <td>{lecture.lectureCode}</td>
+                  <td>{lecture.term}</td>
+                  <td>{lecture.credit}</td>
+                  <td>{lecture.syllabusLink}</td>
+                  <td>{lecture.notesLink}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
 export default LectureSegment;
