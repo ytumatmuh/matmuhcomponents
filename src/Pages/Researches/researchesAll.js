@@ -1,6 +1,6 @@
-import "./researchComp.css";
-import "./researchSegment.css"
-import ResearchSegmentService from "../../Services/researchSegmentService";
+import "../../Segments/ResearchSegment/researchComp.css"
+import "../../Segments/ResearchSegment/researchSegment.css"
+import ResearchService from "../../Services/researchService";
 import React, { useState, useEffect } from "react";
 
 const ResearchComp = ({research}) => {
@@ -12,13 +12,13 @@ const ResearchComp = ({research}) => {
   );
 };
 
-const ResearchSegment = () => {
+const Researchs = () => {
 
   const [researches, setResearches] = useState([]);
     useEffect(() => {
     const fetchResearches = async () => {
       try {
-        const data = await ResearchSegmentService();
+        const data = await ResearchService();
         setResearches(data);
       } catch (error) {
         console.error('Error fetching aesearches:', error);
@@ -36,4 +36,4 @@ const ResearchSegment = () => {
   );
 };
 
-export default ResearchSegment;
+export default Researchs;

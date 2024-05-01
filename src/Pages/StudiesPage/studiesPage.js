@@ -13,7 +13,7 @@ const StudiesPage = () => {
       <div className='studies-page-title'>{t('research')}</div>
       <div className='research-comp'><ResearchSegment /></div>
       <div className='studies-seeMoreButton'>
-        <Link to={'/researchs'}>
+        <Link to={'/research'}>
         <ButtonCustom title={t('smore')} />
         </Link>
       </div>
