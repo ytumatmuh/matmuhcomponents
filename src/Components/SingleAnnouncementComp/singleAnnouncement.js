@@ -10,18 +10,18 @@ const AnnouncementDetailComp = ({ announcement }) => {
 
   return (
     <div className="announcement-detail">
-      {announcement.photoUrl && (
-        <img src={announcement.photoUrl} alt="Announcement" className="announcement-detail-photo" />
+      {announcement.imageUrl && (
+        <img src={announcement.imageUrl} alt="Announcement" className="announcement-detail-photo" />
       )}
       <div className="announcement-detail-content">
-        <div className="announcement-detail-date">{announcement.date}</div>
+        <div className="announcement-detail-date">{announcement.publishDate}</div>
         <div className="announcement-detail-header">
           <div className="announcement-detail-text">
             <h2 className="announcement-detail-title">{announcement.title}</h2>
           </div>
         </div>
-        <p className="announcement-detail-subtitle">{announcement.subtitle}</p>
         <p className="announcement-detail-description">{announcement.content}</p>
+        <a>{announcement.links}</a>
       </div>
       
     </div>
