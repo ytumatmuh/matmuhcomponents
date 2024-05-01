@@ -1,5 +1,5 @@
 import "./projectcomponent.css";
-import ProjectService from "../../Services/projectService";
+import ProjectSegmentService from "../../Services/projectSegmentService";
 import React, { useState, useEffect } from "react";
 
 const ProjectComponent = ({ project }) => {
@@ -23,7 +23,7 @@ const Projects = () => {
       useEffect(() => {
       const fetchProjects = async () => {
         try {
-          const data = await ProjectService();
+          const data = await ProjectSegmentService();
           setProjects(data);
         } catch (error) {
           console.error('Error fetching projects:', error);
