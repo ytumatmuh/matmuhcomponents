@@ -1,31 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./singleAnnouncement.css";
-import { useTranslation } from 'react-i18next'
-import AnnouncementService from '../../Services/announcementService'
 import { useParams } from 'react-router-dom';
-
-const AnnouncementDetailComp = ({ announcement }) => {
-  const { t } = useTranslation();
-
-  return (
-    <div className="announcement-detail">
-      {announcement.photoUrl && (
-        <img src={announcement.photoUrl} alt="Announcement" className="announcement-detail-photo" />
-      )}
-      <div className="announcement-detail-content">
-        <div className="announcement-detail-date">{announcement.date}</div>
-        <div className="announcement-detail-header">
-          <div className="announcement-detail-text">
-            <h2 className="announcement-detail-title">{announcement.title}</h2>
-          </div>
-        </div>
-        <p className="announcement-detail-subtitle">{announcement.subtitle}</p>
-        <p className="announcement-detail-description">{announcement.content}</p>
-      </div>
-      
-    </div>
-  );
-};
+import AnnouncementService from '../../Services/announcementService';
 
 const AnnouncementDetail = () => {
   const { id } = useParams();
@@ -44,18 +19,25 @@ const AnnouncementDetail = () => {
 
     fetchAnnouncements();
   }, []);
-  
-  return (
-    <div>
-      <AnnouncementDetailComp
-        key={announcement.id}
-        announcement={announcement}
-      />
-    </div>
-  );
+
+  // Render loading state if announcements are still loading
+  if (announcements.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  // Render announcement detail if announcement with the provided id exists
+  if (announcement) {
+    return (
+      <div>
+        <h2>{announcement.title}</h2>
+        <p>{announcement.content}</p>
+        {/* Add more details if needed */}
+      </div>
+    );
+  } else {
+    // Render not found message if announcement with the provided id does not exist
+    return <div>Announcement not found!</div>;
+  }
 };
 
-
 export default AnnouncementDetail;
-
-
