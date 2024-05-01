@@ -21,7 +21,3 @@
   padding: 8px;
 }
 
-/* Sıra numarası */
-.lecture-table tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
