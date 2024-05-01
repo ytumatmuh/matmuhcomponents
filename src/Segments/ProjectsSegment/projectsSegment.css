@@ -5,12 +5,13 @@
     width: 15em;
     height: 30em;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
+    grid-template-columns: 1fr; /* Tüm öğeleri tek bir sütun içinde göster */
     gap: 20px; /* Öğeler arası boşluk */
     align-items: center;
     margin: 1em;
     cursor: pointer;
 }
+
 
 .project-container-title {
     padding: 0.5em;
@@ -43,7 +44,7 @@
 }
 
 @media only screen and (max-width:768px) {
-    .project-container{
+    .project-container-all{
         justify-content: center;
     }
 }
