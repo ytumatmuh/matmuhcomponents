@@ -24,12 +24,18 @@
     overflow: hidden;
     width: 15em;
     height: 30em;
+    object-fit: contain;
 }
 
 .project-container-imageurl {
     height: 100%;
     max-width: max-content;
     margin: auto;
+    object-fit: contain;
+}
+
+.project-container-imageurl img{
+    object-fit: contain;
 }
 
 .project-container-subtitle {
