@@ -52,5 +52,6 @@
     .project-service{
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
 }
