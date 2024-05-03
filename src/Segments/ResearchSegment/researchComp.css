@@ -1,5 +1,5 @@
 .research-card {
-    border: 1px solid var(--body_secondary_color);
+    border: 1px solid var(--highlight_color);
     margin: 1em;
     padding: 1em;
     border-radius: 0.5em;

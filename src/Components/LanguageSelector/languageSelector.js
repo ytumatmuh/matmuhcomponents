@@ -11,9 +11,9 @@ const LanguageSelector = () => {
 
   return (
     <div className='selector-container'>
-        <button onClick={() => clickHandle('tr')} className='flag-button-tr'>
+        <button onClick={() => { document.documentElement.lang = 'tr'; clickHandle('tr'); }} className='flag-button-tr'>
         </button>
-        <button onClick={() => clickHandle('en')}
+        <button onClick={() => { document.documentElement.lang = 'en'; clickHandle('en'); }}
         className='flag-button-en'>
         </button>
     </div>

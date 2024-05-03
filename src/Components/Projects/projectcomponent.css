@@ -24,10 +24,26 @@
     overflow: hidden;
     width: 15em;
     height: 30em;
+    object-fit: contain;
+    display: flex;
+    justify-content: center; /* Öğeleri yatay eksende merkezler */
+    align-items: center; /* Öğeleri dikey eksende merkezler */
+
 }
 
 .project-container-imageurl {
     height: 100%;
+    max-width: max-content;
+    margin: auto;
+    object-fit: contain;
+    display: flex;
+    justify-content: center; /* Öğeleri yatay eksende merkezler */
+    align-items: center; /* Öğeleri dikey eksende merkezler */
+
+}
+
+.project-container-imageurl img{
+    object-fit: contain;
 }
 
 .project-container-subtitle {
@@ -37,9 +53,19 @@
     color: var(--body_secondary_color);
 }
 
+.project-service{
+    display: flex;
+    justify-content: space-between;
+}
 
 @media only screen and (max-width:768px) {
     .project-container{
         justify-content: center;
+    }
+
+    .project-service{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

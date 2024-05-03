@@ -1,9 +1,9 @@
 // AnnouncementService.js
 import axios from 'axios';
 
-const API_URL = 'https://matmuhbackend.onrender.com/api/projects/getProjects';
+const API_URL = 'https://matmuhbackend.onrender.com/api/projects/getProjects/3';
 
-const getProjects = async () => {
+const getSegmentProjects = async () => {
   try {
     const response = await axios.get(API_URL);
     return response.data.data || []; // Return an empty array if response.data.data is falsy
@@ -13,4 +13,4 @@ const getProjects = async () => {
   }
 };
 
-export default getProjects;
+export default getSegmentProjects;

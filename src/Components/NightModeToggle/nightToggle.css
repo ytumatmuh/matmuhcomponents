@@ -16,9 +16,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, #a2b9e1,#5b8fe8, #3262b4) ;
+    background: transparent ;
     transition: 300ms;
     border-radius: 100px;
+    border: 1px solid var(--highlight_color);
+    align-items: center;
 }
 
 .slider::before{
@@ -28,18 +30,19 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background: linear-gradient(180deg, #ffcc89, #d8860b);
+    background-color: var(--highlight_color);
     transition: 300ms ease-out;
     border-radius: 100px;
 }
 
 .switch input:checked + .slider::before{
     transform: translateX(26px);
-    background: linear-gradient(60deg, #999999, #474747);
+    background-color: var(--highlight_color);
+    
 }
 
 .switch input:checked + .slider{
-    background: linear-gradient(180deg,#495072,#2d376a, #151d40 ) ;
+    background-color: transparent;
 }
 
 .toggle-container{

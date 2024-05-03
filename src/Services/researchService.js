@@ -1,34 +1,16 @@
-const ResearchService = {
+// AnnouncementService.js
+import axios from 'axios';
 
-    getResearch: () => {
+const API_URL = 'https://matmuhbackend.onrender.com/api/researches/getResearches';
 
-        return [
-            {
-                id: 1,
-                title: "Nonlinear PDEs",
-                subtitle: "Our research group focuses on the analysis of  nonlinear partial differential equations.",
-            },
-            {
-                id: 2,
-                title: "Nonlinear PDEs",
-                subtitle: "Our research group focuses on the analysis of  nonlinear partial differential equations.",
-            },
-            {
-                id: 3,
-                title: "Nonlinear PDEs",
-                subtitle: "Our research group focuses on the analysis of  nonlinear partial differential equations.",
-            },
-        ];
+const getResearches = async () => {
+  try {
+    const response = await axios.get(API_URL);
+    return response.data.data || []; // Return an empty array if response.data.data is falsy
+  } catch (error) {
+    console.error('Error fetching researches:', error);
+    return []; // Return an empty array in case of error
+  }
+};
 
-    },
-
-    getResearchById: (id) =>{
-        const researches = ResearchService.getResearch();
-        return researches.find(research=>research.id == id)
-
-    }
-
-
-}
-
-export default ResearchService;
+export default getResearches;

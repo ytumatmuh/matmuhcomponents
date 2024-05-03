@@ -1,13 +1,16 @@
-.research-service-all{
+.research-service{
     display: grid;
   grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
   gap: 150px; /* Öğeler arası boşluk */
+  padding: 50px;
 }
 
 
 @media only screen and (max-width:768px){
-    .research-service-all{
+    .research-service{
+        display: flex;
         flex-direction: column;
+        gap: 20px;
     }
 
 }

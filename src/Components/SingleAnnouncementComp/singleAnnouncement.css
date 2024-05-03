@@ -20,8 +20,8 @@
   }
   
   .announcement-detail-photo {
-    width: 400px;
-    height: 200px;
+    width: 20%;
+    height: 20%;
     border-radius: 18px;
     
   }
@@ -46,6 +46,13 @@
   .announcement-detail-subtitle{
     margin-bottom: 40px;
   }
+
+  .announcement-detail-links li{
+    list-style: none;
+  }
+  .announcement-detail-links ul{
+    padding: 0;
+  }
   
   @media screen and (max-width: 768px) {
     .announcement-detail {
@@ -61,8 +68,8 @@
     }
   
     .announcement-detail-photo {
-      width: 250px;
-      height: 125px;
+      width: 45%;
+      height: 45%;
     }
   
     .announcement-detail-photo {

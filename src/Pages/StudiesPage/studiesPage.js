@@ -2,7 +2,7 @@
 import React from 'react'
 import './studiesPage.css';
 import ResearchSegment from '../../Segments/ResearchSegment/researchSegment'
-import Project from '../../Services/projectService';
+import Projects from '../../Components/Projects/projectcomponent';
 import ButtonCustom from '../../Components/CustomButton/button';
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
@@ -13,12 +13,12 @@ const StudiesPage = () => {
       <div className='studies-page-title'>{t('research')}</div>
       <div className='research-comp'><ResearchSegment /></div>
       <div className='studies-seeMoreButton'>
-        <Link to={'/researchs'}>
+        <Link to={'/research'}>
         <ButtonCustom title={t('smore')} />
         </Link>
       </div>
       <div className='studies-page-title'>{t('project')}</div>
-      <div className='project-comp'><Project /></div>
+      <div className='project-comp'><Projects /></div>
       <div className='studies-seeMoreButton'>
         <Link to={'/projects'}>
         <ButtonCustom title={t('smore')} />
