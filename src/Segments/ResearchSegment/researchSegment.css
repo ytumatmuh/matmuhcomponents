@@ -1,4 +1,4 @@
-.research-service{
+.research-service-all{
     display: grid;
   grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
   gap: 150px; /* Öğeler arası boşluk */
@@ -6,7 +6,7 @@
 
 
 @media only screen and (max-width:768px){
-    .research-service{
+    .research-service-all{
         flex-direction: column;
     }
 
