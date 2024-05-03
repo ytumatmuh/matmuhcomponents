@@ -1,6 +1,7 @@
 .research-service{
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
+  gap: 150px; /* Öğeler arası boşluk */
 }
 
 
