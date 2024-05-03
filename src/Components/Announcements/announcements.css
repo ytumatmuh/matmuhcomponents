@@ -30,6 +30,10 @@
   font-size: 20px;
   margin-bottom: 10px;
   color: var(--body_color);
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .announcement-content {
@@ -55,6 +59,12 @@
   padding: 30px;
 }
 
+.announcement-description{
+  max-width: 350px;
+  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media screen and (max-width: 768px) {
   .announcement {
