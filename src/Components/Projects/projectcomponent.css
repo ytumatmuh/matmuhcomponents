@@ -25,6 +25,10 @@
     width: 15em;
     height: 30em;
     object-fit: contain;
+    display: flex;
+    justify-content: center; /* Öğeleri yatay eksende merkezler */
+    align-items: center; /* Öğeleri dikey eksende merkezler */
+
 }
 
 .project-container-imageurl {
@@ -32,6 +36,10 @@
     max-width: max-content;
     margin: auto;
     object-fit: contain;
+    display: flex;
+    justify-content: center; /* Öğeleri yatay eksende merkezler */
+    align-items: center; /* Öğeleri dikey eksende merkezler */
+
 }
 
 .project-container-imageurl img{

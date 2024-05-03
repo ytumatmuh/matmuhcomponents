@@ -89,6 +89,7 @@ const LectureSegment = () => {
               </tr>
             </thead>
             <tbody>
+            <tr className="spacer-row"></tr>
               {groupedLectures[termID].map((lecture, index) => (
                 <tr key={index}>
                   <td>{lecture.name}</td>
