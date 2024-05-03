@@ -17,7 +17,7 @@ const MobileNavbar = () => {
   const {t, i18n} = useTranslation();
 
   return (
-    <nav className="mobile-navbar">
+      <nav className="mobile-navbar">
       <div className="mobile-navbar-container">
         <div className="mobile-navbar-logo">
           <img alt="yildiz-logo" src="/images/ytu-logo.webp" />

@@ -2,6 +2,7 @@
     display: grid;
   grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
   gap: 150px; /* Öğeler arası boşluk */
+  padding: 50px;
 }
 
 

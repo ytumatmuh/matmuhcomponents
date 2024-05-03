@@ -1,12 +1,12 @@
 /* lectureSegment.css */
 .lecture-wrapper{
-  margin: 20px;
+  margin: 30px;
+  text-align: center;
 }
 
 .spacer-row {
   height: 10px; /* Example: adds a 10px gap between thead and tbody */
 }
-
 
 .lecture-wrapper h2{
   text-align: center;
@@ -21,12 +21,14 @@
   margin-bottom: 20px;
   color: var(--body_color);
   border-radius: 10px;
+  text-align: center;
 }
 
 .lecture-table thead{
   box-shadow: 0 0 0 1px var(--highlight_color);
   border-radius: 10px;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 .lecture-table tbody{
@@ -37,15 +39,12 @@
 /* Başlık satırı */
 .lecture-table thead th {
   background-color: var(--body_background);
-  
   padding: 8px;
-  text-align: left;
   border-radius: 10px;
 }
 
 /* Veri satırları */
 .lecture-table tbody td {
-  
   padding: 8px;
   border-radius: 10px;
 }

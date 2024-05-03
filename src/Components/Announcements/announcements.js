@@ -46,7 +46,7 @@ const Announcement = () => {
   }, []);
 
   return (
-    <div className="announcement-map-container">
+    <div className="announcement-map-container-1">
       {announcements.map((announcement) => (
         <AnnouncementComp key={announcement.id} announcement={announcement} />
       ))}
