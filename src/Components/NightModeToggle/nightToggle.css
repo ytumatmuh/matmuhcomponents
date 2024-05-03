@@ -19,7 +19,8 @@
     background: transparent ;
     transition: 300ms;
     border-radius: 100px;
-    border: 1px solid var(--highligh_color);
+    border: 1px solid var(--highlight_color);
+    align-items: center;
 }
 
 .slider::before{
@@ -29,18 +30,19 @@
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: var(--highligh_color);
+    background-color: var(--highlight_color);
     transition: 300ms ease-out;
     border-radius: 100px;
 }
 
 .switch input:checked + .slider::before{
     transform: translateX(26px);
-    background-color: var(--highligh_color);
+    background-color: var(--highlight_color);
+    
 }
 
 .switch input:checked + .slider{
-    background-color: var(--highligh_color);
+    background-color: transparent;
 }
 
 .toggle-container{
