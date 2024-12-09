@@ -1,6 +1,107 @@
+:root {
+  --body_background: #f4f3f2;
+  --body_color: #212427;
+  --highlight_color: #142658;
+  --body_secondary_color: #637587;
+  --card_background: #ffffff;
+  --card_shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --body_background: #212427;
+  --body_color: #f4f3f2;
+  --highlight_color: #ac996c;
+  --body_secondary_color: #f0ede5;
+  --card_background: #333333;
+  --card_shadow: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: var(--body_background);
+  color: var(--body_color);
+  font-family: "Newsreader", serif;
+}
+
 .homepage-cover {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.homepage-announcements {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Ekran daraldığında satırlar oluşturur */
+}
+
+.homepage-announcement-card {
+  background-color: var(--card_background);
+  box-shadow: 0 4px 8px var(--card_shadow);
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px; /* Kart genişliği sabit */
+  height: 400px; /* Kart yüksekliği sabit */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.homepage-announcement-image-wrapper {
+  width: 100%;
+  height: 150px; /* Görsel alanı sabit */
+  margin-bottom: 15px;
+}
+
+.homepage-announcement-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.homepage-announcement-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--body_secondary_color);
+  border-radius: 8px;
+}
+
+.homepage-announcement-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--highlight_color);
+  margin-bottom: 10px;
+}
+
+.homepage-announcement-content {
+  font-size: 14px;
+  color: var(--body_secondary_color);
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* İçeriği 3 satırla sınırla */
+  -webkit-box-orient: vertical;
+}
+
+.homepage-button {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .homepage-announcements {
+    flex-direction: column; /* Mobilde kartlar alt alta sıralanır */
     align-items: center;
-    justify-content: center;
   }
+
+  .homepage-announcement-card {
+    width: 75%; /* Kart genişliği mobilde %100 olur */
+    max-width: 400px; /* Kart genişliği en fazla 400px olur */
+  }
+}

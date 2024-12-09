@@ -19,7 +19,7 @@ function App() {
       <div className="app-renderer">
       <Routes>
         <Route path="/" element={<MainFrame />} />
-        <Route path="/announcements/:id" element={<AnnouncementDetail/>} />
+        <Route path="/announcement/:id" element={<AnnouncementDetail/>} />
         <Route path="/department" element={<DepartmentSegment/>}/>
         <Route path="/announcements" element={<AnnouncementSegment/>}/>
         <Route path="/lectures" element={<LectureSegment/>}/>

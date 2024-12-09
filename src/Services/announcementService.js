@@ -1,16 +1,30 @@
-// AnnouncementService.js
 import axios from 'axios';
 
-const API_URL = 'https://matmuhbackend.onrender.com/api/announcements/getAnnouncements';
+const BASE_API_URL = 'https://api.matmuh.yildizskylab.com/api/announcements';
 
-const getAnnouncements = async () => {
+/**
+ * Tüm duyuruları alır.
+ */
+export const getAnnouncements = async () => {
   try {
-    const response = await axios.get(API_URL);
-    return response.data.data || []; // Return an empty array if response.data.data is falsy
+    const response = await axios.get(`${BASE_API_URL}/getAnnouncements`);
+    return response.data.data || [];
   } catch (error) {
     console.error('Error fetching announcements:', error);
-    return []; // Return an empty array in case of error
+    return [];
   }
 };
 
-export default getAnnouncements;
+/**
+ * Belirli bir duyurunun detaylarını alır.
+ * @param {string} id - Duyuru ID'si
+ */
+export const getAnnouncementById = async (id) => {
+  try {
+    const response = await axios.get(`${BASE_API_URL}/getAnnouncementById/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching announcement by ID:', error);
+    throw error;
+  }
+};

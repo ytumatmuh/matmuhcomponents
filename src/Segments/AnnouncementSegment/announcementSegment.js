@@ -1,64 +1,59 @@
 import React, { useState, useEffect } from "react";
-import "./announcementSegment.css";
+import { getAnnouncements } from "../../Services/announcementService";
 import ButtonCustom from "../../Components/CustomButton/button";
-import { useTranslation } from 'react-i18next'
-import AnnouncementService from '../../Services/announcementService'
-import { Link } from 'react-router-dom'
-
-const AnnouncementComp = ({ announcement }) => {
-  const { t } = useTranslation();
-  const dateObject = new Date(announcement.publishDate);
-
-  // Tarihi GG/AA/YYYY formatına dönüştürme
-  const formattedDate = dateObject.toLocaleDateString("tr-TR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric"
-  });
-
-  return (
-    <div className="announcement">
-      <div className="announcement-content" key={announcement.id}>
-        <div className="announcement-date">{formattedDate}</div> {/* Assuming publishDate is the date field */}
-        <div className="announcement-header">
-          <div className="announcement-text">
-            <h2 className="announcement-title">{announcement.title}</h2>
-          </div>
-        </div>
-        <p className="announcement-description">{announcement.content}</p> {/* Assuming content is the subtitle */}
-        <Link to={`/announcements/${announcement.id}`}>  {/* Pass ID as parameter */}
-          <ButtonCustom title={t('rmore')} />
-        </Link>
-      </div>
-      {announcement.imageUrl && (
-        <img src={announcement.imageUrl} alt="Announcement" className="announcement-photo" />
-      )}
-    </div>
-  );
-};
+import "./announcementSegment.css";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const AnnouncementSegment = () => {
   const [announcements, setAnnouncements] = useState([]);
   const { t } = useTranslation();
+
   useEffect(() => {
     const fetchAnnouncements = async () => {
-      try {
-        const data = await AnnouncementService();
-        setAnnouncements(data);
-      } catch (error) {
-        console.error('Error fetching announcements:', error);
-      }
+      const announcementsData = await getAnnouncements();
+      setAnnouncements(announcementsData);
     };
 
     fetchAnnouncements();
   }, []);
 
+  const truncateHTML = (html, maxLength) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = html; // HTML içeriğini işler
+    const textContent = tempElement.textContent || tempElement.innerText || ""; // HTML içeriğinden düz metni çıkar
+    return textContent.length > maxLength
+      ? `${textContent.slice(0, maxLength)}...`
+      : textContent;
+  };
+
   return (
     <div className="announcement-map-container">
-      <h1>{t('announ')}</h1>
-      {announcements.map((announcement) => (
-        <AnnouncementComp key={announcement.id} announcement={announcement} />
-      ))}
+      <h1>{t("announ")}</h1>
+      <div className="announcement-list">
+        {announcements.map((announcement) => (
+          <div key={announcement.id} className="announcement-card">
+            <div className="announcement-image-wrapper">
+              {announcement.coverImageUrl ? (
+                <img
+                  src={announcement.coverImageUrl}
+                  alt={announcement.title}
+                  className="announcement-image"
+                />
+              ) : (
+                <div className="announcement-image-placeholder"></div>
+              )}
+            </div>
+            <h3 className="announcement-title">{announcement.title}</h3>
+            <p className="announcement-content">
+              {truncateHTML(announcement.content, 100)}
+            </p>
+            <Link to={`/announcement/${announcement.id}`}>
+              <ButtonCustom title={t("smore")} />
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

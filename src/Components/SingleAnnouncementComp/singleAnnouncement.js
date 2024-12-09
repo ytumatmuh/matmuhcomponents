@@ -1,89 +1,45 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getAnnouncementById } from "../../Services/announcementService";
 import "./singleAnnouncement.css";
-import ButtonCustom from "../CustomButton/button";
-import { useTranslation } from 'react-i18next'
-import AnnouncementService from '../../Services/announcementService'
-import { useParams } from 'react-router-dom';
-
-const AnnouncementDetailComp = ({ announcement }) => {
-  const { t } = useTranslation();
-  const { imageUrl, publishDate, title, content, links } = announcement;
-  const dateObject = new Date(announcement.publishDate);
-
-  // Tarihi GG/AA/YYYY formatına dönüştürme
-  const formattedDate = dateObject.toLocaleDateString("tr-TR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric"
-  });
-
-  return (
-    <div className="announcement-detail">
-      {announcement.imageUrl && (
-        <img src={announcement.imageUrl} alt="Announcement" className="announcement-detail-photo" />
-      )}
-      <div className="announcement-detail-content">
-        <div className="announcement-detail-date">{formattedDate}</div>
-        <div className="announcement-detail-header">
-          <div className="announcement-detail-text">
-            <h2 className="announcement-detail-title">{announcement.title}</h2>
-          </div>
-        </div>
-        <p className="announcement-detail-description">{announcement.content}</p>
-        {links && links.length > 0 && (
-          <div className="announcement-detail-links">
-            <ul>
-              {links.map((link, index) => (
-                <li key={link.id}>
-                  <a href={`https://${link.link}`} >
-                    {link.link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-        
-      </div>
-      
-    </div>
-  );
-};
-
-
 
 const AnnouncementDetail = () => {
   const { id } = useParams();
-  const [announcements, setAnnouncements] = useState([]);
-  const announcement = announcements.find(announcement => announcement.id === parseInt(id));
-
-  
+  const [announcement, setAnnouncement] = useState(null);
 
   useEffect(() => {
-    const fetchAnnouncements = async () => {
+    const fetchAnnouncementDetail = async () => {
       try {
-        const data = await AnnouncementService();
-        setAnnouncements(data);
+        const response = await getAnnouncementById(id);
+        setAnnouncement(response.data); // API'den dönen `data`yı ayıklıyoruz
       } catch (error) {
-        console.error('Error fetching announcements:', error);
+        console.error("Error fetching announcement detail:", error);
       }
     };
 
-    fetchAnnouncements();
-  }, []);
+    fetchAnnouncementDetail();
+  }, [id]);
 
-  // Add a check to ensure announcement is defined before rendering
+  if (!announcement) {
+    return <p>Loading...</p>;
+  }
+
   return (
-    <div>
-      {announcement && (
-        <AnnouncementDetailComp
-          key={announcement.id}
-          announcement={announcement}
+    <div className="announcement-detail">
+      {announcement.coverImageUrl && (
+        <img
+          src={announcement.coverImageUrl}
+          alt={announcement.title}
+          className="announcement-detail-photo"
         />
       )}
+      <h2 className="announcement-detail-title">{announcement.title}</h2>
+      <div
+        className="announcement-detail-content"
+        dangerouslySetInnerHTML={{ __html: announcement.content }}
+      ></div>
     </div>
   );
 };
-
 
 export default AnnouncementDetail;
