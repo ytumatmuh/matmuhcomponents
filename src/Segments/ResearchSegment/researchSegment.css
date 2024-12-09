@@ -1,13 +1,72 @@
-.research-service-all{
-    display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Her satırda üç öğe */
-  gap: 150px; /* Öğeler arası boşluk */
-}
-
-
-@media only screen and (max-width:768px){
-    .research-service-all{
-        flex-direction: column;
+.researches-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Kartlar ekran daraldığında satırlar oluşturur */
+  }
+  
+  .research-card {
+    background-color: var(--card_background);
+    box-shadow: 0 4px 8px var(--card_shadow);
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Kart genişliği sabit */
+    height: 400px; /* Kart yüksekliği sabit */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .research-image-wrapper {
+    width: 100%;
+    height: 150px; /* Görsel alanı sabit */
+    margin-bottom: 15px;
+  }
+  
+  .research-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .research-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--body_secondary_color);
+    border-radius: 8px;
+  }
+  
+  .research-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--highlight_color);
+    margin-bottom: 10px;
+  }
+  
+  .research-description {
+    font-size: 14px;
+    color: var(--body_secondary_color);
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* İçeriği 3 satırla sınırla */
+    -webkit-box-orient: vertical;
+  }
+  
+  @media (max-width: 768px) {
+    .researches-section {
+      flex-direction: column; /* Mobilde kartlar alt alta sıralanır */
+      align-items: center;
     }
-
-}
+  
+    .research-card {
+      width: 75%; /* Kart genişliği mobilde %100 olur */
+      max-width: 300px; /* Kart genişliği en fazla 400px olur */
+    }
+  }
+  

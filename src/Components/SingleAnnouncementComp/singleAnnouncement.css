@@ -74,3 +74,9 @@
 .announcement-detail-content u {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 768px){
+  .announcement-detail{
+    width: 75%;
+  }
+}

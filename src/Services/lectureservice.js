@@ -1,16 +1,30 @@
-// AnnouncementService.js
 import axios from 'axios';
 
-const API_URL = 'https://matmuhbackend.onrender.com/api/lectures/getLectures';
+const BASE_API_URL = 'https://api.matmuh.yildizskylab.com/api/lectures';
 
-const getLectures = async () => {
+/**
+ * Tüm dersleri alır.
+ */
+export const getLectures = async () => {
   try {
-    const response = await axios.get(API_URL);
-    return response.data.data || []; // Return an empty array if response.data.data is falsy
+    const response = await axios.get(`${BASE_API_URL}/getLectures`);
+    return response.data.data || []; // API'den gelen data yoksa boş dizi döner
   } catch (error) {
-    console.error('Error fetching Lectures:', error);
-    return []; // Return an empty array in case of error
+    console.error('Error fetching lectures:', error);
+    return []; // Hata durumunda boş bir dizi döner
   }
 };
 
-export default getLectures;
+/**
+ * Belirli bir dersin detaylarını alır.
+ * @param {string} id - Ders ID'si
+ */
+export const getLectureById = async (id) => {
+  try {
+    const response = await axios.get(`${BASE_API_URL}/getLectureById/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching lecture by ID:', error);
+    throw error; // Hata durumunda hata fırlatılır
+  }
+};

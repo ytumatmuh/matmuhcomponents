@@ -1,55 +1,51 @@
-import "./projectcomponent.css";
-import ProjectSegmentService from "../../Services/projectSegmentService";
 import React, { useState, useEffect } from "react";
-
-const ProjectComponent = ({ project }) => {
-    const dateObject = new Date(project.date);
-
-    // Tarihi GG/AA/YYYY formatına dönüştürme
-    const formattedDate = dateObject.toLocaleDateString("tr-TR", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric"
-    });
-
-    return (
-        <div className="project-container" key={project.id}>
-            <div className="project-container-image">
-                {project.imageUrl && (
-                    <img src={project.imageUrl} alt="Project" className="project-container-imageurl" />
-                )}
-            </div>
-            <div className="project-container-title">{project.name}</div>
-            <div className="project-container-subtitle">{project.description}</div>
-            <div className="project-container-subtitle">{formattedDate}</div>
-        </div>
-    );
-};
-
-
+import { getProjects } from "../../Services/projectService";
+import "./projectcomponent.css";
 
 const Projects = () => {
+  const [projects, setProjects] = useState([]);
 
-    const [projects, setProjects] = useState([]);
-      useEffect(() => {
-      const fetchProjects = async () => {
-        try {
-          const data = await ProjectSegmentService();
-          setProjects(data);
-        } catch (error) {
-          console.error('Error fetching projects:', error);
-        }
-      };
-  
-      fetchProjects();
-    }, []);
-    return (
-      <div className='project-service'>
-        {projects.map((project) => (
-          <ProjectComponent key={project.id} project={project} />
-        ))}
-      </div>
-    );
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const data = await getProjects();
+      setProjects(data.slice(0, 3)); // Sadece en son 3 projeyi göster
+    };
+
+    fetchProjects();
+  }, []);
+
+  const truncateText = (html, maxLength) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = html;
+    const textContent = tempElement.textContent || tempElement.innerText || "";
+    return textContent.length > maxLength
+      ? `${textContent.slice(0, maxLength)}...`
+      : textContent;
   };
-  
-  export default Projects;
+
+  return (
+    <div className="projects-section">
+      {projects.map((project) => (
+        <div key={project.id} className="project-card">
+          <div className="project-image-wrapper">
+            {project.coverImageUrl ? (
+              <img
+                src={project.coverImageUrl}
+                alt={project.name}
+                className="project-image"
+              />
+            ) : (
+              <div className="project-image-placeholder"></div>
+            )}
+          </div>
+          <h3 className="project-title">{project.name}</h3>
+          <p className="project-description">
+            {truncateText(project.description, 100)}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Projects;

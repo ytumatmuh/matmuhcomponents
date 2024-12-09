@@ -1,107 +1,61 @@
 import React, { useState, useEffect } from "react";
+import { getLectures } from "../../Services/lectureservice";
 import "./lectureSegment.css";
-import { FiBook } from "react-icons/fi";
-import LectureService from "../../Services/lectureservice";
 
-const LectureComp = ({lecture}) => {
+const LectureCard = ({ lecture }) => {
   return (
-    <div className="lecture">
-      <div className="lecture-content">
-        <h2 className="lecture-title">{lecture.name}</h2>
-        {lecture.content.map((file, index) => (
-          <div className="content" key={index}>
-            <div className="icon-box">
-              <FiBook />
-            </div>
-            <p>{file.desc}</p>
-          </div>
-        ))}
-      </div>
+    <div className="lecture-card">
+      <h3 className="lecture-name">{lecture.name}</h3>
+      <p className="lecture-code">Kod: {lecture.code}</p>
+      <p className="lecture-credit">Kredi: {lecture.credit}</p>
+      {lecture.syllabusLink && (
+        <a href={lecture.syllabusLink} className="lecture-link" target="_blank" rel="noopener noreferrer">
+          Ders Programı
+        </a>
+      )}
+      {lecture.notesLink && (
+        <a href={lecture.notesLink} className="lecture-link" target="_blank" rel="noopener noreferrer">
+          Notlar
+        </a>
+      )}
     </div>
   );
 };
 
 const LectureSegment = () => {
-  const [lectures, setLectures] = useState([]);
+  const [groupedLectures, setGroupedLectures] = useState({});
 
   useEffect(() => {
     const fetchLectures = async () => {
       try {
-        const data = await LectureService();
-        setLectures(data);
+        const data = await getLectures();
+        const grouped = data.reduce((acc, lecture) => {
+          const term = lecture.term || "Dönem Bilinmiyor";
+          if (!acc[term]) {
+            acc[term] = [];
+          }
+          acc[term].push(lecture);
+          return acc;
+        }, {});
+        setGroupedLectures(grouped);
       } catch (error) {
-        console.error('Error fetching lectures:', error);
+        console.error("Error fetching lectures:", error);
       }
     };
 
     fetchLectures();
   }, []);
 
-  // Term ID'lerine göre dersleri grupla
-  const groupedLectures = lectures.reduce((groups, lecture) => {
-    const termID = lecture.term;
-    if (!groups[termID]) {
-      groups[termID] = [];
-    }
-    groups[termID].push(lecture);
-    return groups;
-  }, {});
-
-  const getTermExpression = (termID) => {
-    switch (termID) {
-      case '1':
-        return '1. Yıl - Güz';
-      case '2':
-        return '1. Yıl - Bahar';
-      case '3':
-        return '2. Yıl - Güz';
-      case '4':
-        return '2. Yıl - Bahar';
-      case '5':
-        return '3. Yıl - Güz';
-      case '6':
-        return '3. Yıl - Bahar';
-      case '7':
-        return '4. Yıl - Güz';
-      case '8':
-        return '4. Yıl - Bahar';
-
-      // Diğer durumlar için buraya ekleyebilirsiniz
-      default:
-        return `Term ID: ${termID}`;
-    }
-  };
-
   return (
-    <div className="lecture-wrapper">
-      {Object.keys(groupedLectures).map((termID, index) => (
-        <div key={index}>
-          <h2>{getTermExpression(termID)}</h2>
-          <table className="lecture-table">
-            <thead>
-              <tr>
-                <th>Ders Adı</th>
-                <th>Kodu</th>
-                <th>Dönem</th>
-                <th>Kredi</th>
-                <th>Program Linki</th>
-                <th>Notlar Linki</th>
-              </tr>
-            </thead>
-            <tbody>
-            <tr className="spacer-row"></tr>
-              {groupedLectures[termID].map((lecture, index) => (
-                <tr key={index}>
-                  <td>{lecture.name}</td>
-                  <td>{lecture.lectureCode}</td>
-                  <td>{lecture.term}</td>
-                  <td>{lecture.credit}</td>
-                  <td>{lecture.syllabusLink}</td>
-                  <td>{lecture.notesLink}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <div className="lecture-segment">
+      {Object.entries(groupedLectures).map(([term, lectures]) => (
+        <div key={term} className="term-section">
+          <h2 className="term-title">{term}. Dönem</h2>
+          <div className="lecture-list">
+            {lectures.map((lecture) => (
+              <LectureCard key={lecture.id} lecture={lecture} />
+            ))}
+          </div>
         </div>
       ))}
     </div>

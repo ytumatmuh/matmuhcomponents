@@ -1,36 +1,48 @@
-import "./researchComp.css";
-import "./researchSegment.css"
-import ResearchSegmentService from "../../Services/researchSegmentService";
 import React, { useState, useEffect } from "react";
-
-const ResearchComp = ({research}) => {
-  return (
-    <div className='research-card' key={research.id}>
-      <div className='research-card-title '> {research.title}</div>
-      <div className='research-card-description'>{research.description}</div>
-    </div>
-  );
-};
+import { getResearches } from "../../Services/researchService";
+import "./researchSegment.css";
 
 const ResearchSegment = () => {
-
   const [researches, setResearches] = useState([]);
-    useEffect(() => {
+
+  useEffect(() => {
     const fetchResearches = async () => {
-      try {
-        const data = await ResearchSegmentService();
-        setResearches(data);
-      } catch (error) {
-        console.error('Error fetching aesearches:', error);
-      }
+      const data = await getResearches();
+      setResearches(data.slice(0, 3)); // Sadece en son 3 araştırmayı göster
     };
 
     fetchResearches();
   }, []);
+
+  const truncateText = (html, maxLength) => {
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = html;
+    const textContent = tempElement.textContent || tempElement.innerText || "";
+    return textContent.length > maxLength
+      ? `${textContent.slice(0, maxLength)}...`
+      : textContent;
+  };
+
   return (
-    <div className='research-service'>
+    <div className="researches-section">
       {researches.map((research) => (
-        <ResearchComp key={research.id} research={research} />
+        <div key={research.id} className="research-card">
+          <div className="research-image-wrapper">
+            {research.coverImageUrl ? (
+              <img
+                src={research.coverImageUrl}
+                alt={research.title}
+                className="research-image"
+              />
+            ) : (
+              <div className="research-image-placeholder"></div>
+            )}
+          </div>
+          <h3 className="research-card-title">{research.title}</h3>
+          <p className="research-card-description">
+            {truncateText(research.description, 100)}
+          </p>
+        </div>
       ))}
     </div>
   );

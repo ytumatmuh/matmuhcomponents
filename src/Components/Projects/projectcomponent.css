@@ -1,71 +1,72 @@
-.project-container {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    width: 15em;
-    height: 30em;
+.projects-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Kartlar ekran daraldığında satırlar oluşturur */
+  }
+  
+  .project-card {
+    background-color: var(--card_background);
+    box-shadow: 0 4px 8px var(--card_shadow);
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Kart genişliği sabit */
+    height: 400px; /* Kart yüksekliği sabit */
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    margin: 1em;
-    cursor: pointer;
-}
-
-.project-container-title {
-    padding: 0.5em;
-    font-family: "Newsreader", serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--body_color);
-}
-
-.project-container-image {
+    text-align: center;
     overflow: hidden;
-    width: 15em;
-    height: 30em;
-    object-fit: contain;
-    display: flex;
-    justify-content: center; /* Öğeleri yatay eksende merkezler */
-    align-items: center; /* Öğeleri dikey eksende merkezler */
-
-}
-
-.project-container-imageurl {
+  }
+  
+  .project-image-wrapper {
+    width: 100%;
+    height: 150px; /* Görsel alanı sabit */
+    margin-bottom: 15px;
+  }
+  
+  .project-image {
+    width: 100%;
     height: 100%;
-    max-width: max-content;
-    margin: auto;
-    object-fit: contain;
-    display: flex;
-    justify-content: center; /* Öğeleri yatay eksende merkezler */
-    align-items: center; /* Öğeleri dikey eksende merkezler */
-
-}
-
-.project-container-imageurl img{
-    object-fit: contain;
-}
-
-.project-container-subtitle {
-    padding: 0.5em;
-    font-family: "Newsreader", serif;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .project-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--body_secondary_color);
+    border-radius: 8px;
+  }
+  
+  .project-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--highlight_color);
+    margin-bottom: 10px;
+  }
+  
+  .project-description {
     font-size: 14px;
     color: var(--body_secondary_color);
-}
-
-.project-service{
-    display: flex;
-    justify-content: space-between;
-}
-
-@media only screen and (max-width:768px) {
-    .project-container{
-        justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* İçeriği 3 satırla sınırla */
+    -webkit-box-orient: vertical;
+  }
+  
+  @media (max-width: 768px) {
+    .projects-section {
+      flex-direction: column; /* Mobilde kartlar alt alta sıralanır */
+      align-items: center;
     }
-
-    .project-service{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+  
+    .project-card {
+      width: 75%; /* Kart genişliği mobilde %100 olur */
+      max-width: 400px; /* Kart genişliği en fazla 400px olur */
     }
-}
+  }
+  

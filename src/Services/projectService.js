@@ -1,16 +1,30 @@
-// AnnouncementService.js
 import axios from 'axios';
 
-const API_URL = 'https://matmuhbackend.onrender.com/api/projects/getProjects';
+const BASE_API_URL = 'https://api.matmuh.yildizskylab.com/api/projects';
 
-const getProjects = async () => {
+/**
+ * Tüm projeleri alır.
+ */
+export const getProjects = async () => {
   try {
-    const response = await axios.get(API_URL);
-    return response.data.data || []; // Return an empty array if response.data.data is falsy
+    const response = await axios.get(`${BASE_API_URL}/getProjects`);
+    return response.data.data || []; // API'den gelen data yoksa boş dizi döner
   } catch (error) {
-    console.error('Error fetching Projects:', error);
-    return []; // Return an empty array in case of error
+    console.error('Error fetching projects:', error);
+    return []; // Hata durumunda boş bir dizi döner
   }
 };
 
-export default getProjects;
+/**
+ * Belirli bir projenin detaylarını alır.
+ * @param {string} id - Proje ID'si
+ */
+export const getProjectById = async (id) => {
+  try {
+    const response = await axios.get(`${BASE_API_URL}/getProjectById/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching project by ID:', error);
+    throw error; // Hata durumunda hata fırlatılır
+  }
+};
